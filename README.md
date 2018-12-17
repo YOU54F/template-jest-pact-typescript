@@ -1,7 +1,5 @@
 # Pact Consumer Example in Typescript with Jest
 
-This repository is driven by compass-dev.
-
 ## Installation
 
 - clone repository
@@ -96,3 +94,4 @@ Actual Result = Returns an empty response body and a 404
 ## TODO
 
 - Investigate why pact-foundation/pact-stub-server is returning a response from the pact contract, where no body has been provided in the request.
+- Pact stub server is returning this in the logs `[WARN] Found more than one pact request for method POST and path '/test', using the first one`
