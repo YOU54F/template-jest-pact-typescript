@@ -62,6 +62,10 @@ jobs:
         - run:
             name: Publish Pact Contract to Broker
             command: |
+                ls project
+                ls project/src
+                ls project/src/pact
+                ls project/src/pact/pacts
                 yarn run pact-publish
             
 
