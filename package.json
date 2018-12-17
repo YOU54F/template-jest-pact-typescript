@@ -1,0 +1,32 @@
+{
+  "name": "pact-consumer-example-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@pact-foundation/pact": "^7.2.0",
+    "@types/request-promise-native": "^1.0.15",
+    "@types/chai": "^4.1.7",
+    "@types/jest": "^23.3.10",
+    "chai": "^4.2.0",
+    "jest": "^23.6.0",
+    "jest-junit": "^5.2.0",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "typescript": "^3.2.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build-test-publish": "npm run build && npm run pact-test && npm run pact-publish && npm run pact-tag",
+    "pact-test": "jest --detectOpenHandles \"^.+pacttest\\.ts$\"",
+    "pact-tag": " eval $(egrep -v '^#' .env | xargs) src/pact/tasks/tag-pacts-consumer.sh",
+    "pact-publish": " eval $(egrep -v '^#' .env | xargs) src/pact/tasks/publish-pacts.sh",
+    "delete-pacts-local": " rm src/pact/pacts/*.json",
+    "delete-pacts-broker": " eval $(egrep -v '^#' .env | xargs) src/pact/tasks/delete-pacts-broker.sh"
+  },
+
+  "author": "",
+  "license": "ISC"
+}
+
+

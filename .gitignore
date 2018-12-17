@@ -1,0 +1,7 @@
+build
+node_modules
+src/pact/logs
+src/pact/pacts
+.env
+*.DS_Store
+junit*.xml
