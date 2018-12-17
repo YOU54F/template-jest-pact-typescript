@@ -49,6 +49,10 @@ jobs:
             name: Run Pact Test & Generate Report
             command: |
                 yarn run pact-test
+        - persist_to_workspace:
+            root: ~/
+            paths:
+            - src/pact/pacts
 
   publish:
     <<: *defaults  

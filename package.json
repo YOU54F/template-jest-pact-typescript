@@ -19,10 +19,10 @@
     "build": "tsc",
     "build-test-publish": "npm run build && npm run pact-test && npm run pact-publish && npm run pact-tag",
     "pact-test": "jest --detectOpenHandles \"^.+pacttest\\.ts$\"",
-    "pact-tag": " eval $(egrep -v '^#' .env | xargs) src/pact/tasks/tag-pacts-consumer.sh",
-    "pact-publish": " eval $(egrep -v '^#' .env | xargs) src/pact/tasks/publish-pacts.sh",
-    "delete-pacts-local": " rm src/pact/pacts/*.json",
-    "delete-pacts-broker": " eval $(egrep -v '^#' .env | xargs) src/pact/tasks/delete-pacts-broker.sh"
+    "pact-tag": "./src/pact/tasks/tag-pacts-consumer.sh",
+    "pact-publish": "./src/pact/tasks/publish-pacts.sh",
+    "delete-pacts-local": "rm src/pact/pacts/*.json",
+    "delete-pacts-broker": "./src/pact/tasks/delete-pacts-broker.sh"
   },
 
   "author": "",
