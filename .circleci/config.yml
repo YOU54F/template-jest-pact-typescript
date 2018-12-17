@@ -2,7 +2,7 @@ version: 2
 
 defaults: &defaults
   docker:
-    - image: circleci/node:8.12
+    - image: circleci/node:8.14
       environment:
         ## this enables colors in the output
         TERM: xterm
@@ -13,18 +13,17 @@ jobs:
         - checkout
         - restore_cache:
             keys:
-            - v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - v2-deps-{{ .Branch }}-
-            - v2-deps-
+            - v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v3-deps-{{ .Branch }}-
+            - v3-deps-
         - run:
             name: Install project dependencies
             command: | 
-                npm ci
+                yarn install
         - save_cache:
-            key: v2-deps-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            key: v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
             paths:
-            - ~/.npm
-            - ~/.cache
+            - ~/.cache/yarn
         - persist_to_workspace:
             root: ~/
             paths:
@@ -39,7 +38,7 @@ jobs:
         - run:
             name: Build Source Files
             command: |
-                npm run build
+                yarn run build
 
   test:
     <<: *defaults  
@@ -49,7 +48,7 @@ jobs:
         - run:
             name: Run Pact Test & Generate Report
             command: |
-                npm run pact-test
+                yarn run pact-test
 
   publish:
     <<: *defaults  
@@ -59,7 +58,7 @@ jobs:
         - run:
             name: Publish Pact Contract to Broker
             command: |
-                npm run pact-publish
+                yarn run pact-publish
             
 
 workflows:
