@@ -37,7 +37,7 @@ describe("Test Service Handling", () => {
     test("should send a valid request and get a valid response", async () => {
       await provider.addInteraction(interaction.postValidRequest);
       const response = await sendRequest(
-        requestResponse.TestRequest("happyPath")
+        requestResponse.TestRequest("bobsleigh")
       );
       expect(response).to.deep.equal(
         requestResponse.RESPONSE_VALID_REQUEST
@@ -45,7 +45,7 @@ describe("Test Service Handling", () => {
       await provider.verify();
     });
   });
-
+  
   describe("#postInvalid", () => {
     test("should send a invalid request and return and error", async () => {
       await provider.addInteraction(interaction.postInvalidRequest);
