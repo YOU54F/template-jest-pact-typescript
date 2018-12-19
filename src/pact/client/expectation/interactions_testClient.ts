@@ -1,8 +1,6 @@
 import { InteractionObject } from "@pact-foundation/pact";
 import * as requestResponse from "../../requestResponse";
 
-
-
 export const postValidRequest: InteractionObject = {
   state: "Then I expect to recieve an error",
   uponReceiving: "When I send an valid request with last_name happyPath",
@@ -11,14 +9,11 @@ export const postValidRequest: InteractionObject = {
     status: 200
   },
   withRequest: {
-    body: requestResponse.TestRequestMatcher('happyPath'),
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
+    body: requestResponse.TestRequestMatcher('anyString'),
     method: "POST",
     path: "/test"
   }
-  
 };
 
 export const postInvalidRequest: InteractionObject = {
@@ -29,11 +24,22 @@ export const postInvalidRequest: InteractionObject = {
     status: 400
   },
   withRequest: {
-    body: requestResponse.TestRequestMatcher(''),
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
+    body: requestResponse.TestRequestMatcher(null),
     method: "POST",
     path: "/test"
   }
 };
+
+export const fallThroughRequest: InteractionObject = {
+  state: "A request with application/json HEADER and no body",
+  uponReceiving: "A request with application/json HEADER and no body",
+  willRespondWith: {
+    status: 404
+  },
+  withRequest: {
+    headers: { "Content-Type": "application/json" },
+    method: "POST",
+    path: "/test"
+  }
+}
