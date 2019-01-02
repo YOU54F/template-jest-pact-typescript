@@ -71,17 +71,4 @@ describe("Test Service Handling", () => {
     });
   });
 
-  // IMPORTANT WORKAROUND - Ensure this is the last test
-  // When the pact-stub-server cannot determine a match, it serves the first match
-  // which is the last one referenced in the generated pact file.
-  // this will load a fall back request into the pact-stub-server
-  describe("fall through request", () => {
-    test("A request with application/json HEADER and no body", async () => {
-      await provider.addInteraction(interaction.fallThroughRequest);
-      const response = await sendRequestWithoutBody();
-      expect(response).to.be.undefined;
-      await provider.verify();
-    });
-  });
-
 });
