@@ -6,7 +6,7 @@
     "@pact-foundation/pact": "7.2.0",
     "@types/request-promise-native": "1.0.15",
     "@types/chai": "4.1.7",
-    "@types/jest": "23.3.10",
+    "@types/jest": "23.3.12",
     "chai": "4.2.0",
     "jest": "23.6.0",
     "jest-junit": "5.2.0",
