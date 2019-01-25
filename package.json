@@ -24,10 +24,7 @@
     "pact-publish": "./src/pact/tasks/publish-pacts.sh",
     "delete-pacts-local": "rm src/pact/pacts/*.json",
     "delete-pacts-broker": "./src/pact/tasks/delete-pacts-broker.sh"
-  },
-
+      },
   "author": "",
   "license": "ISC"
 }
-
-

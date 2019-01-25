@@ -1,7 +1,7 @@
-!/usr/bin/env bash
-This script will publish the branch tag for all specified pacts in /pacts
+#!/usr/bin/env bash
+#This script will publish the branch tag for all specified pacts in /pacts
 
-for f in ../pacts/*.json; do
+for f in src/pact/pacts/*.json; do
   consumer=$(jq '.consumer.name' $f | sed s'/"//g')
   git_commit_hash=$(git rev-parse --short HEAD)
   # note we are using sed to URLencode the / in branch name feature/COM-XX

@@ -30,16 +30,3 @@ export const postInvalidRequest: InteractionObject = {
     path: "/test"
   }
 };
-
-export const fallThroughRequest: InteractionObject = {
-  state: "A request with application/json HEADER and no body",
-  uponReceiving: "A request with application/json HEADER and no body",
-  willRespondWith: {
-    status: 404
-  },
-  withRequest: {
-    headers: { "Content-Type": "application/json" },
-    method: "POST",
-    path: "/test"
-  }
-}
