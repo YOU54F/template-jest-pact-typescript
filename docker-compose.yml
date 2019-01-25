@@ -1,10 +1,8 @@
 version: "3"
 
 services:
-  pact_mock:
+  pact-stub-server:
     build:
       context: src/pact
-      args:
-        PACT_FILE: pacts/test-consumer-test-provider.json
     ports:
       - "8080:8080"
