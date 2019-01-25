@@ -1,5 +1,11 @@
-FROM pactfoundation/pact-stub-server
+FROM ruby:2-alpine
 
-COPY pacts /app/pacts
+RUN apk add --no-cache --virtual build-dependencies build-base
+RUN gem install pact-mock_service
 
-CMD ["--file", "pacts/test-consumer-test-provider.json", "-p", "8080", "--loglevel", "warn"]
+COPY pacts/test-consumer-test-provider.json /app/pact.json
+
+WORKDIR /app
+
+CMD exec pact-stub-service pact.json --port 8080 --host 0.0.0.0
+

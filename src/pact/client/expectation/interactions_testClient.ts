@@ -9,10 +9,8 @@ export const postValidRequest: InteractionObject = {
     status: 200
   },
   withRequest: {
-    body: requestResponse.TestRequest("happyPath"),
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
+    body: requestResponse.TestRequestMatcher('anyString'),
     method: "POST",
     path: "/test"
   }
@@ -26,10 +24,8 @@ export const postInvalidRequest: InteractionObject = {
     status: 400
   },
   withRequest: {
-    body: requestResponse.TestRequest(""),
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
+    body: requestResponse.TestRequestMatcher(null),
     method: "POST",
     path: "/test"
   }

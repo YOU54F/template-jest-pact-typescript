@@ -34,7 +34,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"last_name\":\"happyPath\"}"
+					"raw": "{\"key\":\"anystringfgfg\"}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/test",
@@ -80,7 +80,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"last_name\":\"\"}"
+					"raw": "{\"key\":\"\"}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/test",
@@ -105,8 +105,8 @@
 					"script": {
 						"id": "49a04442-6746-48af-af81-61e382540543",
 						"exec": [
-							"pm.test(\"Status code is 404\", function () {",
-							"    pm.response.to.have.status(404);",
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -119,13 +119,13 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
-						"type": "text",
-						"value": "application/json"
+						"value": "application/xml",
+						"type": "text"
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": ""
+					"mode": "file",
+					"file": {}
 				},
 				"url": {
 					"raw": "http://localhost:8080/test",
@@ -150,8 +150,8 @@
 					"script": {
 						"id": "49a04442-6746-48af-af81-61e382540543",
 						"exec": [
-							"pm.test(\"Status code is 404\", function () {",
-							"    pm.response.to.have.status(404);",
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
 							"});"
 						],
 						"type": "text/javascript"
