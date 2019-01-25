@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #This script will publish the generated pact contract for all specified pacts in /pacts
-ls
+
 for f in src/pact/pacts/*.json; do
   consumer=$(jq '.consumer.name' $f | sed s'/"//g')
   provider=$(jq '.provider.name' $f | sed s'/"//g')

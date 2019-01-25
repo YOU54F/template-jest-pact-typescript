@@ -48,27 +48,12 @@ jobs:
         - run:
             name: Run Pact Test & Generate Report
             command: |
-                yarn run pact-test
-        - persist_to_workspace:
-            root: ~/
-            paths:
-            - project/src/pact/pacts
-
-  publish:
-    <<: *defaults  
-    steps:
-        - attach_workspace:
-            at: ~/      
-        - run:
-            name: Publish Pact Contract to Broker
-            command: |
-                ls
-                ls src
-                ls src/pact
-                ls src/pact/pacts
-                yarn run pact-publish
+                yarn run pact-test   
+        # - run:
+        #     name: Publish Pact Contract to Broker
+        #     command: |
+        #         yarn run pact-publish
             
-
 workflows:
   version: 2
   build-compile-test-publish:
@@ -80,6 +65,3 @@ workflows:
       - test:
           requires:
             - compile
-      - publish:
-          requires:
-            - test
