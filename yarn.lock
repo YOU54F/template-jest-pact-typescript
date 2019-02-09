@@ -40,10 +40,10 @@
     unixify "1.0.0"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-7.2.0.tgz#82c32aa63c83a4be51400db931e2b78db6867176"
-  integrity sha512-PZkbsz5vkHW5iTfiUw8ONWk+Uxaiql9/VRTRwLzFNO9BDCkHsyZfhNq4SpydxSTeOR5ihWtH3U8PG6malet/ng==
+"@pact-foundation/pact@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-7.3.0.tgz#14f6369ce4ec0fd3fb3fde1e0908f780a301fe45"
+  integrity sha512-xZ9TPi7JD+TItXGnWQIW3kFxmgbca2N6oKJ8WWbJ8+MFfEX+qOX8cVfNJih0kFmiHpfTgtsVFn6r92EDFVMtdA==
   dependencies:
     "@pact-foundation/pact-node" "^6.20.0"
     "@types/express" "^4.11.1"
@@ -111,15 +111,6 @@
   resolved "https://registry.yarnpkg.com/@types/form-data/-/form-data-2.2.1.tgz#ee2b3b8eaa11c0938289953606b745b738c54b1e"
   integrity sha512-JAMFhOaHIciYVh8fb5/83nmuO/AHwmto+Hq7a9y8FzLDcC1KCU344XDOMEmahnrTFlHjgh4L0WJFczNIX2GxnQ==
   dependencies:
-    "@types/node" "*"
-
-"@types/glob@*":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@types/glob/-/glob-7.1.1.tgz#aa59a1c6e3fbc421e07ccd31a944c30eba521575"
-  integrity sha512-1Bh06cbWJUHMC97acuD6UMG29nMt0Aqz1vF3guLfG+kHHJhy3AyohZFFxYk2f7Q1SQIrNwvncxAE0N/9s70F2w==
-  dependencies:
-    "@types/events" "*"
-    "@types/minimatch" "*"
     "@types/node" "*"
 
 "@types/jest@23.3.13":
