@@ -153,10 +153,10 @@
     unixify "1.0.0"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-7.2.0.tgz#82c32aa63c83a4be51400db931e2b78db6867176"
-  integrity sha512-PZkbsz5vkHW5iTfiUw8ONWk+Uxaiql9/VRTRwLzFNO9BDCkHsyZfhNq4SpydxSTeOR5ihWtH3U8PG6malet/ng==
+"@pact-foundation/pact@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-7.3.0.tgz#14f6369ce4ec0fd3fb3fde1e0908f780a301fe45"
+  integrity sha512-xZ9TPi7JD+TItXGnWQIW3kFxmgbca2N6oKJ8WWbJ8+MFfEX+qOX8cVfNJih0kFmiHpfTgtsVFn6r92EDFVMtdA==
   dependencies:
     "@pact-foundation/pact-node" "^6.20.0"
     "@types/express" "^4.11.1"
