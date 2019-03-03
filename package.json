@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@pact-foundation/pact": "7.3.0",
+    "@pact-foundation/pact": "8.0.2",
     "@types/chai": "4.1.7",
     "@types/jest": "23.3.14",
     "@types/request-promise-native": "1.0.15",
