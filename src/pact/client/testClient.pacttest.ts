@@ -16,31 +16,16 @@ describe("Test Swagger Pet-store Example", () => {
     afterEach(async () => await provider.verify());
     afterAll(async () => await provider.finalize());
   
-    test("should accept a valid post request to add a pet", async () => {
+    test("should accept a valid get request to get a pet", async () => {
       await provider.addInteraction(interaction.postValidRequest);
       const client = getClient();
 
       await client
-      .post("/v2/pet")
-      .set("Content-Type", "application/json")
-      .send(requestResponse.postPetValidRequest)
-      .expect(200, requestResponse.postPetValidResponse);
+      .get("/v2/pet/1845563262948980200")
+      .set("api_key", "[]")
+      .expect(200);
 
       await provider.verify();
     });
-
-    test("should accept a valid post request to add a pet", async () => {
-      await provider.addInteraction(interaction.postInvalidRequest);
-      const client = getClient();
-
-      await client
-      .post("/v2/pet")
-      .set("Content-Type", "application/json")
-      .send(requestResponse.postPetInvalidRequest)
-      .expect(405);
-
-      await provider.verify();
-    });
-
 
 });

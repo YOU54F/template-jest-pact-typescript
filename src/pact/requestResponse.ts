@@ -1,5 +1,3 @@
-export const postPetValidResponse = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>`
-
 import {
   term,
 } from "@pact-foundation/pact/dsl/matchers";
@@ -15,24 +13,25 @@ function matcherRegexString(status: string) {
   }
 };
 
-export const postPetValidRequest = {
-  "id": 0,
-  "category": {
-    "id": 0,
-    "name": "string"
-  },
-  "name": "doggie",
-  "photoUrls": [
-    "string"
-  ],
-  "tags": [
-    {
-      "id": 0,
-      "name": "string"
-    }
-  ],
-  "status": "available"
-};
+export const getPetValidResponse =`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Pet>
+  <category>
+    <id>0</id>
+    <name>string</name>
+  </category>
+  <id>1845563262948980200</id>
+  <name>doggie</name>
+  <photoUrls>
+    <photoUrl>string</photoUrl>
+  </photoUrls>
+  <status>available</status>
+  <tags>
+    <tag>
+      <id>0</id>
+      <name>string</name>
+    </tag>
+  </tags>
+</Pet>`;
 export const postPetInvalidRequest = {
   "id": "abc",
   "category": {
