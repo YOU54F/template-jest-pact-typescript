@@ -40,7 +40,7 @@ jobs:
             command: |
                 yarn run build
 
-  verify-test:
+  verify-test-publish:
     <<: *defaults  
     steps:
         - attach_workspace:
@@ -56,13 +56,7 @@ jobs:
         - run:
             name: Validate Pact contract against Swagger space
             command: |
-                yarn run swagger-validate-pact  
-
-  publish:
-    <<: *defaults  
-    steps:
-        - attach_workspace:
-            at: ~/      
+                yarn run swagger-validate-pact     
         - run:
             name: Publish pacts
             command: |
@@ -80,9 +74,6 @@ workflows:
       - compile:
           requires:
             - build
-      - verify-test:
+      - verify-test-publish:
           requires:
             - compile
-      - publish:
-          requires:
-            - verify-test
