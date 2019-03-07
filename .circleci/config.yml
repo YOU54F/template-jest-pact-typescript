@@ -13,15 +13,15 @@ jobs:
         - checkout
         - restore_cache:
             keys:
-            - v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - v3-deps-{{ .Branch }}-
-            - v3-deps-
+            - v4-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v4-deps-{{ .Branch }}-
+            - v4-deps-
         - run:
             name: Install project dependencies
             command: | 
                 yarn install
         - save_cache:
-            key: v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            key: v4-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
             paths:
             - ~/.cache/yarn
         - persist_to_workspace:
@@ -40,20 +40,38 @@ jobs:
             command: |
                 yarn run build
 
-  test:
+  verify-test:
     <<: *defaults  
     steps:
         - attach_workspace:
             at: ~/      
         - run:
+            name: Validate Swagger spec
+            command: |
+                yarn run swagger-validate-spec 
+        - run:
             name: Run Pact Test & Generate Report
             command: |
                 yarn run pact-test   
-        # - run:
-        #     name: Publish Pact Contract to Broker
-        #     command: |
-        #         yarn run pact-publish
-            
+        - run:
+            name: Validate Pact contract against Swagger space
+            command: |
+                yarn run swagger-validate-pact  
+
+  publish:
+    <<: *defaults  
+    steps:
+        - attach_workspace:
+            at: ~/      
+        - run:
+            name: Publish pacts
+            command: |
+                yarn run pact-publish 
+        - run:
+            name: Tag Pacts
+            command: |
+                yarn run pact-tag
+
 workflows:
   version: 2
   build-compile-test-publish:
@@ -62,6 +80,9 @@ workflows:
       - compile:
           requires:
             - build
-      - test:
+      - verify-test:
           requires:
             - compile
+      - publish:
+          requires:
+            - verify-test
