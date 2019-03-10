@@ -54,7 +54,7 @@ jobs:
             command: |
                 yarn run pact-test   
         - run:
-            name: Validate Pact contract against Swagger space
+            name: Validate Pact contract against Swagger spec
             command: |
                 yarn run swagger-validate-pact     
         - run:
