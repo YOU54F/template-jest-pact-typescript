@@ -1,5 +1,21 @@
 # Pact Consumer Example in Typescript with Jest
 
+## Showcases the following
+
+- Written in Typescript
+- Utilises Jest Test Runner
+- Uses Swagger to define API
+- Uses Swagger-cli to validate Swagger specification
+- Uses Pact.io to perform consumer driven contract tests
+- Uses Swagger-mock-validator to validate generated pact contracts
+- Publishes validated pact contracts to pact-broker (hosted on AWS EC2)
+- Tags validated contracts with branch name
+
+## Where can I see it
+
+- CircleCI builds here - <https://circleci.com/gh/YOU54F/pact-consumer-example-typescript>
+- Pact Broker here - <https://pact.you54f.co.uk> (PACT/PACT)
+
 ## Installation
 
 - clone repository
@@ -9,89 +25,29 @@
 ### Run pact tests
 
 - Run `yarn run pact-test`
+  
+### Validate Swagger spec
+
+- Run `yarn run swagger-validate-spec`
+  
+### Validate Pact contract against Swagger spec
+
+- Run `yarn run swagger-validate-pact`
+  
+### Publish pacts
+
+- Run `pact-publish`
+  
+### Tag acts
+
+- Run `pact-tag`
 
 ### Start the mock server
 
 - Run `docker-compose up`
 
-### Run requests against the mock server
+### Set the following env vars for pact publishing
 
-- With Postman, open the `pact-consumer-example-typescript.postman_collection` and run each of the 4 tests
-- Or see the following curl commands in the next section
-  
-#### Example requests
-
-Pact contract test 1 - Happy Path, send a valid request and expect a valid response
-
-```sh
-curl -X POST \
-  http://localhost:8080/test \
-  -H 'Content-Type: application/json' \
-  -d '{"last_name":"happyPath"}'
-```
-
-Expected and actual response below
-
-```sh
-{
-    "testResult": "validRequest"
-}
-```
-
-Pact contract test 2 - Unhappy Path, send an invalid request (empty required field) and expect an error
-
-```sh
-curl -X POST \
-  http://localhost:8080/test \
-  -H 'Content-Type: application/json' \
-  -d '{"last_name":""}'
-
-```
-
-Expected and actual response below
-
-```sh
-{
-    "errors": [
-        "An error occurred"
-    ]
-}
-```
-
-Pact Stub Server Test 3 - Dev Functionality Test - An empty post request should return a 404
-
-```sh
-curl -X POST \
-  http://localhost:8080/test \
-  -H 'Content-Type: application/json'
-
-```
-
-Expected Result = Returns an empty response body and a 404
-Actual Result = Returns the below body and a 200
-
-```sh
-{
-    "testResult": "validRequest"
-}
-```
-
-Pact Stub Server Test 4 - Dev Functionality Test - An post request with a field not specified in the providers request body should return a 404
-
-```sh
-
-curl -X POST \
-  http://localhost:8080/test \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "unknownData": "validRequest"
-  }'
-```
-
-Expected Result = Returns an empty response body and a 404
-Actual Result = Returns an empty response body and a 404
-
-## TODO
-
-- Investigate why pact-foundation/pact-stub-server is returning a response from the pact contract, where no body has been provided in the request.
-- Pact stub server is returning this in the logs `[WARN] Found more than one pact request for method POST and path '/test', using the first one`
+- PACT_BROKER_URL
+- PACT_BROKER_BASIC_AUTH_USERNAME
+- PACT_BROKER_BASIC_AUTH_PASSWORD

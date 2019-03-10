@@ -1,5 +1,4 @@
-import { expect } from "chai";
-import * as request from "request-promise-native";
+import * as supertest from "supertest";
 import * as requestResponse from "../requestResponse";
 import * as interaction from "./expectation/interactions_testClient";
 import { getProvider } from "./expectation/provider_testClient";
@@ -7,68 +6,26 @@ import { getProvider } from "./expectation/provider_testClient";
 const pactPort = 9879;
 const provider = getProvider(pactPort);
 
-const sendRequest = (req: {}) => {
-  const endpointURL = "http://localhost:" + pactPort + "/test";
-  const options = {
-    body: req,
-    headers: {
-      "Content-Type": "application/json"
-    },
-    json: true,
-    simple: false,
-    uri: endpointURL
-  };
-
-  return request.post(options);
+const getClient = () => {
+  const url = `http://localhost:${pactPort}`;
+  return supertest(url);
 };
 
-const sendRequestWithoutBody = () => {
-  const endpointURL = "http://localhost:" + pactPort + "/test";
-  const options = {
-    headers: {
-      "Content-Type": "application/json"
-    },
-    json: true,
-    simple: false,
-    uri: endpointURL
-  };
-
-  return request.post(options);
-};
-
-describe("Test Service Handling", () => {
-  beforeAll(async () => {
-    jest.setTimeout(10000);
-    await provider.setup();
-  });
-
-  afterAll(async () => {
-    jest.setTimeout(10000);
-    await provider.finalize();
-  });
-
-  describe("#postValidRequest", () => {
-    test("should send a valid request and get a valid response", async () => {
-      await provider.addInteraction(interaction.postValidRequest);
-      const response = await sendRequest(
-        requestResponse.TestRequest("thisCanBeAnyString")
-      );
-      expect(response).to.deep.equal(
-        requestResponse.RESPONSE_VALID_REQUEST
-      );
-      await provider.verify();
-    });
-  });
+describe("Test Swagger Pet-store Example", () => {
+    beforeAll(async () => await provider.setup());
+    afterEach(async () => await provider.verify());
+    afterAll(async () => await provider.finalize());
   
-  describe("#postInvalid", () => {
-    test("should send a invalid request and return and error", async () => {
-      await provider.addInteraction(interaction.postInvalidRequest);
-      const response = await sendRequest(
-        requestResponse.TestRequest('')
-      );
-      expect(response).to.deep.equal(requestResponse.RESPONSE_INVALID_REQUEST);
+    test("should accept a valid get request to get a pet", async () => {
+      await provider.addInteraction(interaction.postValidRequest);
+      const client = getClient();
+
+      await client
+      .get("/v2/pet/1845563262948980200")
+      .set("api_key", "[]")
+      .expect(200);
+
       await provider.verify();
     });
-  });
 
 });

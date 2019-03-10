@@ -2,31 +2,14 @@ import { InteractionObject } from "@pact-foundation/pact";
 import * as requestResponse from "../../requestResponse";
 
 export const postValidRequest: InteractionObject = {
-  state: "Then I expect to recieve an error",
-  uponReceiving: "When I send an valid request with last_name happyPath",
+  state: "A pet 1845563262948980200 exists",
+  uponReceiving: "A get request to get a pet",
   willRespondWith: {
-    body: requestResponse.RESPONSE_VALID_REQUEST,
     status: 200
   },
   withRequest: {
-    headers: { "Content-Type": "application/json" },
-    body: requestResponse.TestRequestMatcher('anyString'),
-    method: "POST",
-    path: "/test"
-  }
-};
-
-export const postInvalidRequest: InteractionObject = {
-  state: "Then I expect to recieve an error",
-  uponReceiving: "When I send an invalid request",
-  willRespondWith: {
-    body: requestResponse.RESPONSE_INVALID_REQUEST,
-    status: 400
-  },
-  withRequest: {
-    headers: { "Content-Type": "application/json" },
-    body: requestResponse.TestRequestMatcher(null),
-    method: "POST",
-    path: "/test"
+    method: "GET",
+    path: "/v2/pet/1845563262948980200",
+    headers: { "api_key": "[]" }
   }
 };
