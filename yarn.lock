@@ -269,7 +269,7 @@
     "@types/cookiejar" "*"
     "@types/node" "*"
 
-"@types/supertest@^2.0.7":
+"@types/supertest@2.0.7":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@types/supertest/-/supertest-2.0.7.tgz#46ff6508075cd4519736be060f0d6331a5c8ca7b"
   integrity sha512-GibTh4OTkal71btYe2fpZP/rVHIPnnUsYphEaoywVHo+mo2a/LhlOFkIm5wdN0H0DA0Hx8x+tKgCYMD9elHu5w==
@@ -4519,7 +4519,7 @@ superagent@^3.8.3:
     qs "^6.5.1"
     readable-stream "^2.3.5"
 
-supertest@^3.4.2:
+supertest@3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/supertest/-/supertest-3.4.2.tgz#bad7de2e43d60d27c8caeb8ab34a67c8a5f71aad"
   integrity sha512-WZWbwceHUo2P36RoEIdXvmqfs47idNNZjCuJOqDz6rvtkk8ym56aU5oglORCpPeXGxT7l9rkJ41+O1lffQXYSA==
@@ -4546,7 +4546,7 @@ supports-color@^6.0.0, supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-swagger-cli@^2.2.1:
+swagger-cli@2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/swagger-cli/-/swagger-cli-2.2.1.tgz#5f3f2f4f796443ed9e9c314ead03eda35fb397aa"
   integrity sha512-BiqWdvidBnAnhRFs6Y2xTL/86quEG9wy3a1yMofnH/zmkaUs5r7o83Y5WOvL1Ml2qyTGyJAMXY9nBdY5XROM6g==
@@ -4562,7 +4562,7 @@ swagger-methods@^1.0.4, swagger-methods@^1.0.8:
   resolved "https://registry.yarnpkg.com/swagger-methods/-/swagger-methods-1.0.8.tgz#8baf37ee861d3c72ff7b2faad6d74c60b336e2ed"
   integrity sha512-G6baCwuHA+C5jf4FNOrosE4XlmGsdjbOjdBK4yuiDDj/ro9uR4Srj3OR84oQMT8F3qKp00tYNv0YN730oTHPZA==
 
-swagger-mock-validator@^6.0.1:
+swagger-mock-validator@6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-6.0.1.tgz#1b156b919178e201245238a25a4de7134030d0b0"
   integrity sha512-DdkK/lyGG2nov2z9yOiuBlCk4qgxTY+g4Vd1c6WXjpvIfHcbpfi+mk0DngfUaBs3k6UY//Pt4+96odZsX7osgQ==
