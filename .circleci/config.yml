@@ -66,6 +66,39 @@ jobs:
             command: |
                 yarn run pact-tag
 
+  provider-verify-node:
+    <<: *defaults  
+    steps:
+        - attach_workspace:
+            at: ~/      
+        - run:
+            shell: /bin/bash
+            name: Provider verification with pact-node
+            command: |
+                yarn run pact-verify-provider-node
+
+  provider-verify-js:
+    <<: *defaults  
+    steps:
+        - attach_workspace:
+            at: ~/      
+        - run:
+            shell: /bin/bash
+            name: Provider verification with pact-js
+            command: |
+                yarn run pact-verify-provider-js
+
+  provider-verify-https_broker:
+    <<: *defaults  
+    steps:
+        - attach_workspace:
+            at: ~/      
+        - run:
+            shell: /bin/bash
+            name: Provider verification with pact-js
+            command: |
+                yarn run pact-verify-provider-https_broker
+
 workflows:
   version: 2
   build-compile-test-publish:
@@ -77,3 +110,12 @@ workflows:
       - verify-test-publish:
           requires:
             - compile
+      - provider-verify-node:
+          requires:
+            - verify-test-publish
+      - provider-verify-js:
+          requires:
+            - verify-test-publish
+      - provider-verify-https_broker:
+          requires:
+            - verify-test-publish
