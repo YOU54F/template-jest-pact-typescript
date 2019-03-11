@@ -15,11 +15,13 @@ const applicationVersion = process.env.npm_package_version
 
 var opts = {
   provider: 'test-provider', // where your service will be running during the test, either staging or localhost on CI
-  providerBaseUrl: 'https://petstore.swagger.io/v2', // where your service will be running during the test, either staging or localhost on CI
+  providerBaseUrl: 'https://petstore.swagger.io/', // where your service will be running during the test, either staging or localhost on CI
   // providerStatesSetupUrl: 'http://localhost:3002/test/setup', // the url to call to set up states
   pactBrokerUrl: process.env.PACT_BROKER_URL,
   publishVerificationResult: true, // ONLY SET THIS TRUE IN CI!
   providerVersion: '1.0', // the application version of the provider 
+  validateSSL: false, 
+
   pactBrokerUsername: process.env.PACT_BROKER_BASIC_AUTH_USERNAME,
   pactBrokerPassword: process.env.PACT_BROKER_BASIC_AUTH_PASSWORD,
   customProviderHeaders: []

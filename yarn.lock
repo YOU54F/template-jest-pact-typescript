@@ -303,10 +303,10 @@
     unixify "1.0.0"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@8.0.2":
-  version "8.0.2"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-8.0.2.tgz#83f565604653582f6eb53558bf961d926d08f308"
-  integrity sha512-xUpXXFJM9oOHH1noho6tnUkAdV3pc/ygyGW+EFDhWzBDFg1OXYXkEigzH/kQ0mtpw6I8FzBkMLBbZbybcBaRLA==
+"@pact-foundation/pact@8.0.4":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-8.0.4.tgz#5945cdafc06e3528fab0d007151949bc206e2df2"
+  integrity sha512-v86kT2r1ExNX8hod4bS4QxcvCFoKrkUZVp+uJ8YrGaNQfGENNHB3s25RdA9SIRplySMyjtg+VqBAxLyFUGfdNQ==
   dependencies:
     "@pact-foundation/pact-node" "^6.21.4"
     "@types/express" "^4.11.1"
