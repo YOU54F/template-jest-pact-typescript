@@ -88,16 +88,27 @@ jobs:
             command: |
                 yarn run pact-verify-provider-js
 
-  provider-verify-https_broker:
+  provider-verify-https_broker-NODE:
     <<: *defaults  
     steps:
         - attach_workspace:
             at: ~/      
         - run:
             shell: /bin/bash
-            name: Provider verification with pact-js
+            name: Provider verification with pact-node https broker no ca
             command: |
-                yarn run pact-verify-provider-https_broker
+                yarn run pact-verify-provider-https_broker-NODE
+
+  provider-verify-https_broker-JS:
+    <<: *defaults  
+    steps:
+        - attach_workspace:
+            at: ~/      
+        - run:
+            shell: /bin/bash
+            name: Provider verification with pact-node https broker no ca
+            command: |
+                yarn run pact-verify-provider-https_broker-JS
 
 workflows:
   version: 2
@@ -116,6 +127,9 @@ workflows:
       - provider-verify-js:
           requires:
             - verify-test-publish
-      - provider-verify-https_broker:
+      - provider-verify-https_broker-NODE:
+          requires:
+            - verify-test-publish
+      - provider-verify-https_broker-JS:
           requires:
             - verify-test-publish

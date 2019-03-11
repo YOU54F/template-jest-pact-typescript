@@ -20,8 +20,6 @@ var opts = {
   pactBrokerUrl: process.env.PACT_BROKER_URL,
   publishVerificationResult: true, // ONLY SET THIS TRUE IN CI!
   providerVersion: '1.0', // the application version of the provider 
-  validateSSL: false, 
-
   pactBrokerUsername: process.env.PACT_BROKER_BASIC_AUTH_USERNAME,
   pactBrokerPassword: process.env.PACT_BROKER_BASIC_AUTH_PASSWORD,
   customProviderHeaders: []
