@@ -16,7 +16,7 @@
     "swagger-cli": "2.2.1",
     "swagger-mock-validator": "6.0.1",
     "ts-jest": "24.0.0",
-    "tslint": "5.13.1",
+    "tslint": "5.14.0",
     "tslint-config-prettier": "1.18.0",
     "typescript": "3.3.3333"
   },
