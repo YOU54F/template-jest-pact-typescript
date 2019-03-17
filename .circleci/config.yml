@@ -73,9 +73,9 @@ jobs:
             at: ~/      
         - run:
             shell: /bin/bash
-            name: Provider verification with pact-js
+            name: Provider verification with pact
             command: |
-                yarn run pact-verify-provider-js
+                yarn run pact-verify-provider
 workflows:
   version: 2
   build-compile-test-publish:
