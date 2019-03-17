@@ -38,7 +38,7 @@
 
 - Run `pact-publish`
   
-### Tag pacts
+### Tag acts
 
 - Run `pact-tag`
 

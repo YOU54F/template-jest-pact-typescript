@@ -1,0 +1,191 @@
+{
+	"info": {
+		"_postman_id": "b1704a6c-6773-43b4-95c1-72ea18bc3ba8",
+		"name": "pact-consumer-example-typescript",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pact Test 1 - Happy Path",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ba278c4b-6676-4b5d-94b7-af9ab0a9e18e",
+						"exec": [
+							"pm.test(\"Pact Test 1\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.testResult).to.eql(\"validRequest\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key\":\"anystringfgfg\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				},
+				"description": "This is a test that is expected to return \n\n{\n    \"testResult\": \"validRequest\"\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "Pact Test 2 - Unhappy Path",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "32b976d4-3654-4e2a-a637-faab1789f117",
+						"exec": [
+							"pm.test(\"Pact Test 2\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.errors).to.eql([\"An error occurred\"]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key\":\"\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				},
+				"description": "This is a test that is expected to return \n\n{\n  \"errors\": [\n    \"An error occurred\"\n  ]\n}"
+			},
+			"response": []
+		},
+		{
+			"name": "Pact Test 3 - Unspecified request - An empty body should cause a 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49a04442-6746-48af-af81-61e382540543",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "http://localhost:8080/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				},
+				"description": "This is a test that is expected to return a 404 and no body"
+			},
+			"response": []
+		},
+		{
+			"name": "Pact Test 4 - Unspecified request - An unexpected item in the request body should cause a 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49a04442-6746-48af-af81-61e382540543",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"unknownData\": \"validRequest\"\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"test"
+					]
+				},
+				"description": "This is a test that is expected to return a 404 and no body"
+			},
+			"response": []
+		}
+	]
+}

@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "@pact-foundation/pact": "8.0.5",
+    "@pact-foundation/pact": "8.0.4",
     "@types/chai": "4.1.7",
     "@types/jest": "24.0.11",
     "@types/supertest": "2.0.7",
     "chai": "4.2.0",
     "cross-env": "5.2.0",
-    "dotenv": "6.2.0",
     "jest": "24.5.0",
     "jest-junit": "6.3.0",
     "supertest": "4.0.0",
@@ -29,8 +28,8 @@
     "pact-tag": "./src/pact/tasks/tag-pacts-consumer.sh",
     "pact-publish": "./src/pact/tasks/publish-pacts.sh",
     "delete-pacts-local": "rm src/pact/pacts/*.json",
-    "delete-pacts-broker": "./src/pact/tasks/delete-pacts-broker.sh",
-    "pact-verify-provider": "./src/pact/tasks/verify-provider_pact.sh"},
+    "delete-pacts-broker": "./src/pact/tasks/delete-pacts-broker.sh"
+  },
   "author": "Yousaf Nabi",
   "license": "MIT"
 }
