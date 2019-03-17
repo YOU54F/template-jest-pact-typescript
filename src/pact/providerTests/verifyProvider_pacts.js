@@ -19,6 +19,7 @@ var opts = {
   // providerStatesSetupUrl: 'http://localhost:3002/test/setup', // the url to call to set up states
   pactBrokerUrl: process.env.PACT_BROKER_URL,
   publishVerificationResult: true, // ONLY SET THIS TRUE IN CI!
+  changeOrigin: true,
   providerVersion: applicationVersion, // the application version of the provider 
   pactBrokerUsername: process.env.PACT_BROKER_BASIC_AUTH_USERNAME,
   pactBrokerPassword: process.env.PACT_BROKER_BASIC_AUTH_PASSWORD
