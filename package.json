@@ -30,11 +30,7 @@
     "pact-publish": "./src/pact/tasks/publish-pacts.sh",
     "delete-pacts-local": "rm src/pact/pacts/*.json",
     "delete-pacts-broker": "./src/pact/tasks/delete-pacts-broker.sh",
-    "pact-verify-provider-js": "./src/pact/tasks/verify-provider_pactJS.sh",
-    "pact-verify-provider-node": "./src/pact/tasks/verify-provider_pactNode.sh",
-    "pact-verify-provider-https_broker-NODE": "./src/pact/tasks/verify-provider_pactNode_HTTPS_BROKER.sh",
-    "pact-verify-provider-https_broker-JS": "./src/pact/tasks/verify-provider_pactJS_HTTPS_BROKER.sh"
-  },
+    "pact-verify-provider": "./src/pact/tasks/verify-provider_pact.sh"},
   "author": "Yousaf Nabi",
   "license": "MIT"
 }
