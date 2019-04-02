@@ -281,10 +281,10 @@
     "@types/istanbul-lib-coverage" "^2.0.0"
     "@types/yargs" "^12.0.9"
 
-"@pact-foundation/pact-node@^6.21.4":
-  version "6.21.5"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-node/-/pact-node-6.21.5.tgz#da9ee79eb7426618d6708dd2c8e2903366174ec2"
-  integrity sha512-PkciKaPjwnMoNwe7MSOlD6/ZoSOiUJqzu559JTi5c/XrA5BKw7cPL7lRpsiUrbMW7jsrlYxwmmwj6KlE2kRQpw==
+"@pact-foundation/pact-node@^8.1.1":
+  version "8.1.1"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact-node/-/pact-node-8.1.1.tgz#53b4915348804b39be37d20abdf95f87b509bc00"
+  integrity sha512-owjkK8EcYbkGZNHsZ0BKyauxXjl8T2H/WukdhSJz97Umb22rELGJmSN5fe+8jhHP9/x8bn3iMponvlB5AbZ4pw==
   dependencies:
     "@types/q" "1.0.7"
     bunyan "1.8.12"
@@ -303,12 +303,12 @@
     unixify "1.0.0"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@8.0.5":
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-8.0.5.tgz#90bc8838ad5ce37a7d44829efb6f8f68c51e28f5"
-  integrity sha512-2fHpWds+liWdVrCwI+wWUZD6ECSrzt7gUUAfOx6L1NIISF89tKrl3sAfp/z97vOUpr5ore52IYfbZ6NNn975BQ==
+"@pact-foundation/pact@8.1.0":
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-8.1.0.tgz#334c66337f8e5c172f134512d73193473e94d4a9"
+  integrity sha512-T5neaezVjaMTWXWn25P653ncXV9UCKQB+rwKXRRnWu16VR87pgppv++Hpj4QA/xiBqHOY3oS2OADXSuEm1fCjQ==
   dependencies:
-    "@pact-foundation/pact-node" "^6.21.4"
+    "@pact-foundation/pact-node" "^8.1.1"
     "@types/express" "^4.11.1"
     body-parser "^1.18.2"
     bunyan "^1.8.12"
