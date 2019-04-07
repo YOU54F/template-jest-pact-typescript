@@ -5,19 +5,25 @@
   "dependencies": {
     "@pact-foundation/pact": "8.1.0",
     "@types/chai": "4.1.7",
+    "@types/dotenv": "^6.1.1",
     "@types/jest": "24.0.11",
     "@types/supertest": "2.0.7",
     "chai": "4.2.0",
     "cross-env": "5.2.0",
     "dotenv": "7.0.0",
+    "husky": "^1.3.1",
     "jest": "24.7.1",
     "jest-junit": "6.3.0",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "supertest": "4.0.2",
     "swagger-cli": "2.2.1",
     "swagger-mock-validator": "6.0.1",
     "ts-jest": "24.0.1",
-    "tslint": "5.15.0",
+    "ts-node": "^8.0.3",
+    "tslint": "^5.15.0",
     "tslint-config-prettier": "1.18.0",
+    "tslint-no-focused-test": "^0.5.0",
     "typescript": "3.4.1"
   },
   "scripts": {
@@ -26,11 +32,23 @@
     "swagger-validate-spec": "swagger-cli validate ./docs/pet-store.json",
     "swagger-validate-pact": "swagger-mock-validator ./docs/pet-store.json ./src/pact/pacts/test-consumer-test-provider.json",
     "pact-test": "jest --detectOpenHandles \"^.+pacttest\\.ts$\"",
-    "pact-tag": "./src/pact/tasks/tag-pacts-consumer.sh",
-    "pact-publish": "./src/pact/tasks/publish-pacts.sh",
+    "pact-publish": "./src/pact/providerTests/publish.sh",
     "delete-pacts-local": "rm src/pact/pacts/*.json",
     "delete-pacts-broker": "./src/pact/tasks/delete-pacts-broker.sh",
-    "pact-verify-provider": "./src/pact/tasks/verify-provider_pact.sh"},
+    "pact-verify-provider": "ts-node src/pact/providerTests/verify.ts"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "author": "Yousaf Nabi",
   "license": "MIT"
 }
