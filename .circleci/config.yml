@@ -61,18 +61,13 @@ jobs:
             name: Publish pacts
             command: |
                 yarn run pact-publish 
-        - run:
-            name: Tag Pacts
-            command: |
-                yarn run pact-tag
 
   provider-verify:
     <<: *defaults  
     steps:
         - attach_workspace:
-            at: ~/      
+            at: ~/ 
         - run:
-            shell: /bin/bash
             name: Provider verification with pact
             command: |
                 yarn run pact-verify-provider
@@ -85,8 +80,11 @@ workflows:
           requires:
             - build
       - verify-test-publish:
+          context: pact-consumer-example-typescript
           requires:
             - compile
       - provider-verify:
+          context: pact-consumer-example-typescript
           requires:
             - verify-test-publish
+        
