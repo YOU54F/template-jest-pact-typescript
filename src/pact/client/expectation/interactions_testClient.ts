@@ -1,5 +1,4 @@
 import { InteractionObject } from "@pact-foundation/pact";
-import * as requestResponse from "../../requestResponse";
 
 export const postValidRequest: InteractionObject = {
   state: "A pet 1845563262948980200 exists",
@@ -10,6 +9,6 @@ export const postValidRequest: InteractionObject = {
   withRequest: {
     method: "GET",
     path: "/v2/pet/1845563262948980200",
-    headers: { "api_key": "[]" }
+    headers: { api_key: "[]" }
   }
 };
