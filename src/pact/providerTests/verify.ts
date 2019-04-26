@@ -1,8 +1,9 @@
 // 'use strict'
 
-import { Verifier } from "@pact-foundation/pact";
+import { Verifier, VerifierOptions } from "@pact-foundation/pact";
 import { LogLevel } from "@pact-foundation/pact/dsl/options";
 import * as cp from "child_process";
+import * as supertest from "supertest";
 
 let revision: string;
 let artefactTag: string;
@@ -63,7 +64,35 @@ if (
   publishResultsFlag = true;
 }
 
-const opts = {
+const opts: VerifierOptions = {
+  stateHandlers: {
+    "A pet 1845563262948980200 exists": async () => {
+      const url = process.env.PACT_PROVIDER_URL;
+      const pet = "1845563262948980200";
+      const object = {
+        id: 0,
+        category: {
+          id: pet,
+          name: "string"
+        },
+        name: "doggie",
+        photoUrls: ["string"],
+        tags: [
+          {
+            id: 0,
+            name: "string"
+          }
+        ],
+        status: "available"
+      };
+      const res = await supertest(url)
+        .post(`/v2/pet`)
+        .send(object)
+        .set("api_key", "[]")
+        .expect(200);
+      return Promise.resolve(res);
+    }
+  },
   provider: process.env.PACT_PROVIDER_NAME, // where your service will be running during the test, either staging or localhost on CI
   providerBaseUrl: process.env.PACT_PROVIDER_URL, // where your service will be running during the test, either staging or localhost on CI
   pactBrokerUrl: process.env.PACT_BROKER_URL,
