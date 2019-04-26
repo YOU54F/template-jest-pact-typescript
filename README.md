@@ -14,7 +14,7 @@
 ## Where can I see it
 
 - CircleCI builds here - <https://circleci.com/gh/YOU54F/pact-consumer-example-typescript>
-- Pact Broker here - <https://pact.you54f.co.uk> (PACT/PACT)
+- Pact Broker here - <https://you54f.co.uk> - running on AWS Lambda (see https://github.com/YOU54F/pact_broker-serverless for details of setup)
 
 ## Installation
 
