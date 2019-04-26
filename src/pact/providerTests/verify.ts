@@ -115,8 +115,6 @@ new Verifier(opts)
   })
   .catch((error: any) => {
     // tslint:disable-next-line: no-console
-    console.log(opts);
-    // tslint:disable-next-line: no-console
     console.log(error);
     process.exit(1);
   });
