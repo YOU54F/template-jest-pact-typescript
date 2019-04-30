@@ -1,6 +1,6 @@
 import * as supertest from "supertest";
+import { getProvider } from "../provider";
 import * as interaction from "./expectation/interactions_testClient";
-import { getProvider } from "./expectation/provider_testClient";
 
 const pactPort = 9879;
 const provider = getProvider(pactPort);
