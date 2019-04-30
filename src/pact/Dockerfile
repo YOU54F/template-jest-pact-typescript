@@ -3,7 +3,10 @@ FROM ruby:2-alpine
 RUN apk add --no-cache --virtual build-dependencies build-base
 RUN gem install pact-mock_service
 
-COPY pacts/test-consumer-test-provider.json /app/pact.json
+ARG PACT_FILE
+ARG PORT
+
+COPY pacts/${PACT_FILE} /app/pact.json
 
 WORKDIR /app
 

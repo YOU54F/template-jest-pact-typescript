@@ -5,7 +5,10 @@ import * as supertest from "supertest";
 import { getProvider } from "../provider";
 
 const pactPort = 9880;
-const provider = getProvider(pactPort);
+const provider = getProvider({
+  pactPort,
+  provider: "file-upload-service"
+});
 
 const getClient = () => {
   const url = `http://localhost:${pactPort}`;
