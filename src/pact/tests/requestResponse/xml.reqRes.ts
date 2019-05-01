@@ -30,19 +30,3 @@ export const getPetValidResponse = `<?xml version="1.0" encoding="UTF-8" standal
     </tag>
   </tags>
 </Pet>`;
-export const postPetInvalidRequest = {
-  id: "abc",
-  category: {
-    id: 0,
-    name: "string"
-  },
-  name: "doggie",
-  photoUrls: ["string"],
-  tags: [
-    {
-      id: 0,
-      name: "string"
-    }
-  ],
-  status: `available`
-};

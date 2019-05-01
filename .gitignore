@@ -1,7 +1,7 @@
 build
 node_modules
-src/pact/logs
-src/pact/pacts
+logs
+pacts
 .env
 *.DS_Store
 junit*.xml

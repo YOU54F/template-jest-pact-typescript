@@ -7,7 +7,7 @@ import { getProvider } from "../provider";
 const pactPort = 9880;
 const provider = getProvider({
   pactPort,
-  provider: "file-upload-service"
+  provider: "file-upload-provider"
 });
 
 const getClient = () => {

@@ -23,7 +23,7 @@ const resumeResponse = fs.readFileSync(
 
 describe("soap provider pact", () => {
   const provider = getProvider({
-    provider: "soap-service",
+    provider: "soap-provider",
     pactPort
   });
 

@@ -1,5 +1,5 @@
 import { InteractionObject } from "@pact-foundation/pact";
-import { getPetValidResponse } from "../requestResponse/xml.reqRes";
+import { getPetValidResponse } from "../requestResponse/json.reqRes";
 
 export const postValidRequest: InteractionObject = {
   state: "A pet 1845563262948980200 exists",
@@ -8,7 +8,7 @@ export const postValidRequest: InteractionObject = {
     status: 200,
     body: getPetValidResponse,
     headers: {
-      "Content-Type": "application/xml;charset=UTF-8"
+      "Content-Type": "application/json;charset=UTF-8"
     }
   },
   withRequest: {
