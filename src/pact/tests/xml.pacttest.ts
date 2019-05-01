@@ -1,6 +1,7 @@
 import * as supertest from "supertest";
 import { getProvider } from "../provider";
-import * as interaction from "./expectation/interactions_testClient";
+import * as interaction from "./expectation/xml.expectation";
+import * as xml from "./requestResponse/xml.reqRes";
 
 const pactPort = 9879;
 const provider = getProvider({
@@ -25,8 +26,7 @@ describe("Test Swagger Pet-store Example", () => {
     await client
       .get("/v2/pet/1845563262948980200")
       .set("api_key", "[]")
-      .expect(200);
-
+      .expect(200, xml.getPetValidResponse);
     await provider.verify();
   });
 });

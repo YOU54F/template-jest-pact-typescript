@@ -1,0 +1,10 @@
+version: "3.1"
+
+services:
+  dealfo_mock:
+    build:
+      context: pact-stub-service
+      args:
+        PACT_FILE: pacts/signing-service-soap-service.json
+    ports:
+      - 8080:8080
