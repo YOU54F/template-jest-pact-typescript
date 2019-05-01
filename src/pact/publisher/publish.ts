@@ -17,7 +17,7 @@ main();
 function getOpts() {
   const consumerVersion = artefactTag + "-" + revision;
   opts = {
-    pactFilesOrDirs: [resolve(process.cwd(), "src/pact/pacts")],
+    pactFilesOrDirs: [resolve(process.cwd(), "pacts")],
     pactBroker: PACT_BROKER_URL,
     pactBrokerUsername: PACT_BROKER_BASIC_AUTH_USERNAME,
     pactBrokerPassword: PACT_BROKER_BASIC_AUTH_PASSWORD,

@@ -74,7 +74,7 @@ jobs:
         - run:
             name: Provider verification with pact
             command: |
-                yarn run pact-verify-provider
+                yarn run pact-verify
 workflows:
   version: 2
   build-compile-test-publish:

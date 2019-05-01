@@ -2,7 +2,7 @@
   "name": "pact-consumer-example-typescript",
   "version": "1.0.0",
   "description": "",
-  "dependencies": {
+  "devDependencies": {
     "@pact-foundation/pact": "8.2.2",
     "@types/chai": "4.1.7",
     "@types/dotenv": "6.1.1",
@@ -32,9 +32,9 @@
     "swagger-validate-spec": "swagger-cli validate ./docs/pet-store.json",
     "swagger-validate-pact": "swagger-mock-validator ./docs/pet-store.json ./pacts/test-consumer-json-provider.json",
     "pact-test": "jest --detectOpenHandles \"^.+pacttest\\.ts$\"",
-    "pact-publish": "./tasks/publish.sh",
+    "pact-publish": "./src/pact/publisher/publish.sh",
     "delete-pacts-local": "rm ./pacts/*.json",
-    "pact-verify-provider": "ts-node tasks/verify.ts",
+    "pact-verify": "ts-node src/pact/verifier/verify.ts",
     "lint": "tslint --project . --fix"
   },
   "lint-staged": {
