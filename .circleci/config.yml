@@ -36,6 +36,10 @@ jobs:
         - attach_workspace:
             at: ~/      
         - run:
+            name: Lint Source Files
+            command: |
+                yarn run lint
+        - run:
             name: Build Source Files
             command: |
                 yarn run build
