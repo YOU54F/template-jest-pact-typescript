@@ -34,7 +34,8 @@
     "pact-test": "jest --detectOpenHandles \"^.+pacttest\\.ts$\"",
     "pact-publish": "./tasks/publish.sh",
     "delete-pacts-local": "rm pacts/*.json",
-    "pact-verify-provider": "ts-node tasks/verify.ts"
+    "pact-verify-provider": "ts-node tasks/verify.ts",
+    "lint": "tslint --project . --fix"
   },
   "lint-staged": {
     "src/**/*.ts": [
