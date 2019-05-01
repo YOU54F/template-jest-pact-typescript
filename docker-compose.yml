@@ -1,8 +1,19 @@
 version: "3"
 
 services:
-  pact-stub-server:
+  pact-stub-server-example:
     build:
       context: src/pact
+      args:
+        PACT_FILE: test-consumer-test-provider.json
     ports:
       - "8080:8080"
+  file-upload-example:
+    build:
+      context: src/pact
+      args:
+        PACT_FILE: test-consumer-file-upload-service.json
+    ports:
+      - "8081:8080"
+
+  
