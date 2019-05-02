@@ -94,7 +94,7 @@ CircleCI Triggers on contract content change
   },
   "request": {
     "method": "POST",
-    "url": "https://circleci.com/api/v1.1/project/bitbucket/infinityworksconsulting/compass-pact-provider/tree/COM-397?circle-token=****",
+    "url": "https://circleci.com/api/v1.1/project/github/you54f/pact-consumer-example-typescript/tree/FOO-123?circle-token=****",
     "headers": {
       "Content-Type": "application/json"
     },

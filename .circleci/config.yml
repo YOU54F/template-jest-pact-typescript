@@ -6,6 +6,8 @@ defaults: &defaults
       environment:
         ## this enables colors in the output
         TERM: xterm
+
+
 jobs:
   build:
     <<: *defaults
@@ -29,7 +31,7 @@ jobs:
             paths:
             - .cache
             - project
-            
+
   compile:
     <<: *defaults  
     steps:
@@ -79,6 +81,7 @@ workflows:
   version: 2
   build-compile-test-publish:
     jobs:
+      - jest-pact
       - build
       - compile:
           requires:
