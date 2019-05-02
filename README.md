@@ -51,3 +51,9 @@
 - PACT_BROKER_URL
 - PACT_BROKER_BASIC_AUTH_USERNAME
 - PACT_BROKER_BASIC_AUTH_PASSWORD
+
+## Credits
+
+- [Pact Foundation](https://github.com/pact-foundation)
+- [Pact JS](https://github.com/pact-foundation/pact-js)
+- [Initial Proposal](https://github.com/pact-foundation/pact-js/issues/215#issuecomment-437237669) by [TimothyJones](https://github.com/TimothyJones)
