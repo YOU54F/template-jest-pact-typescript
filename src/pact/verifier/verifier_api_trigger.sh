@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 import { Verifier, VerifierOptions } from "@pact-foundation/pact";
 import { LogLevel } from "@pact-foundation/pact/dsl/options";

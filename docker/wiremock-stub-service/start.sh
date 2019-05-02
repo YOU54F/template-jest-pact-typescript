@@ -4,5 +4,5 @@ set -e
 echo "Starting Healthcheck..."
 nohup sh -c ./healthcheck &
 
-echo "Starting Pact Service..."
-pact-stub-service --host 0.0.0.0 --port 8080 /pact.json
+echo "Starting Wiremock Service..."
+./docker-entrypoint.sh --verbose

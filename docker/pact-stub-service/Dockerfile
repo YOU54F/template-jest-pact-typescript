@@ -1,4 +1,4 @@
-FROM 567253745059.dkr.ecr.eu-west-2.amazonaws.com/pact-base
+FROM you54f/pact-base
 
 ARG PACT_FILE
 

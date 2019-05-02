@@ -6,7 +6,6 @@ COPY healthcheck.go .
 
 RUN go build healthcheck.go
 
-# Pushed to 567253745059.dkr.ecr.eu-west-2.amazonaws.com/pact-base
 FROM debian:stretch
 
 ARG PACT_RUBY_VERSION="1.63.0"

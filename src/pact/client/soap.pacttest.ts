@@ -13,11 +13,11 @@ const getClient = () => {
 // http://www.soapclient.com
 const requestPath = "/xml/soapresponder.wsdl";
 const resumeRequest = fs.readFileSync(
-  "./src/pact/tests/data/Resume_Request.xml",
+  "./src/pact/client/data/Resume_Request.xml",
   "utf-8"
 );
 const resumeResponse = fs.readFileSync(
-  "./src/pact/tests/data/Resume_Response.xml",
+  "./src/pact/client/data/Resume_Response.xml",
   "utf-8"
 );
 

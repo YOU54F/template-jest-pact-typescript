@@ -1,26 +1,26 @@
 version: "3.1"
 
 services:
-  pact-stub-server-example:
+  pact-stub-server-json:
     build:
       context: pact-stub-service
       args:
-        PACT_FILE: pacts/test-consumer-test-provider.json
+        PACT_FILE: pacts/test-consumer-json-provider.json
     ports:
       - "8080:8080"
-  file-upload-example:
+  pact-stub-server-file-upload:
     build:
       context: pact-stub-service
       args:
-        PACT_FILE: pacts/test-consumer-file-upload-service.json
+        PACT_FILE: pacts/test-consumer-file-upload-provider.json
     ports:
-      - "8080:8080"
-  soap-example:
+      - "8081:8080"
+  pact-stub-server-soap:
     build:
       context: pact-stub-service
       args:
-        PACT_FILE: pacts/test-consumer-soap-service.json
+        PACT_FILE: pacts/test-consumer-soap-provider.json
     ports:
-      - "8080:8080"
+      - "8082:8080"
 
   
