@@ -3048,7 +3048,7 @@ jest-mock@^24.7.0:
   dependencies:
     "@jest/types" "^24.7.0"
 
-jest-pact@^0.0.9:
+jest-pact@0.0.9:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.0.9.tgz#86b41db8fe861b156b3b8772350825a382805057"
   integrity sha512-KtzePgnngfs8MD/20eM5142+dKduOQ0XWiDewG6FxgflrAWHi1z+Q7/zouQ9kUhNNve//Qr5avBwIbMaaabMPA==
