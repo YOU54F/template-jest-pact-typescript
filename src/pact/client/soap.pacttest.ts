@@ -16,7 +16,7 @@ const resumeResponse = fs.readFileSync(
 );
 
 jestpact.pactWithSuperTest(
-  { consumer: "test-service", provider: "file-upload-provider", port },
+  { consumer: "test-service", provider: "soap-provider", port },
   async (provider: any, client: any) => {
     describe("Simple Soap Request", () => {
       it("should add two numbers", async () => {

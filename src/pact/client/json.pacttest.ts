@@ -5,7 +5,7 @@ import * as json from "./requestResponse/json.reqRes";
 const port = 9872;
 
 jestpact.pactWithSuperTest(
-  { consumer: "test-service", provider: "file-upload-provider", port },
+  { consumer: "test-service", provider: "json-provider", port },
   async (provider: any, client: any) => {
     test("should accept a valid get request to get a pet", async () => {
       await provider.addInteraction(interaction.postValidRequest);
