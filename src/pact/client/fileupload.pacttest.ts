@@ -6,7 +6,7 @@ import * as jestpact from "jest-pact";
 const port = 9880;
 
 jestpact.pactWithSuperTest(
-  { consumer: "test-service", provider: "file-upload-provider", port },
+  { consumer: "test-consumer", provider: "file-upload-provider", port },
   async (provider: any, client: any) => {
     describe("file upload service", () => {
       test("should successfully allow upload of a base 64 encoded pdf", async () => {
