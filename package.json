@@ -15,7 +15,7 @@
     "jest": "24.7.1",
     "jest-junit": "6.4.0",
     "jest-pact": "0.0.10",
-    "lint-staged": "8.1.5",
+    "lint-staged": "8.1.6",
     "prettier": "1.17.0",
     "supertest": "4.0.2",
     "swagger-cli": "2.2.1",
