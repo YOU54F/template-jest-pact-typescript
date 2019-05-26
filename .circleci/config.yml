@@ -97,7 +97,7 @@ jobs:
         - run:
             name: set env vars for aws-provider
             command: |
-                echo 'export PACT_PROVIDER_NAME="test-service"' >> $BASH_ENV
+                echo 'export PACT_PROVIDER_NAME="test-provider"' >> $BASH_ENV
                 echo 'export PACT_PROVIDER_URL="https://petstore.swagger.io"' >> $BASH_ENV
         - run:
             name: Provider verification with pact
