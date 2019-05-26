@@ -2,8 +2,11 @@
 
 import { Verifier, VerifierOptions } from "@pact-foundation/pact";
 import { LogLevel } from "@pact-foundation/pact/dsl/options";
+import * as aws4 from "aws4";
 import * as cp from "child_process";
+import * as path from "path";
 import * as supertest from "supertest";
+import url = require("url");
 
 let revision: string;
 let artefactTag: string;
@@ -13,7 +16,7 @@ let tagsArray: string[];
 
 try {
   revision = cp
-    .execSync("git rev-parse --short HEAD")
+    .execSync("git rev-parse --short HEAD", { stdio: "pipe" })
     .toString()
     .trim();
 } catch (Error) {
@@ -24,7 +27,7 @@ try {
 
 try {
   branch = cp
-    .execSync("git rev-parse --abbrev-ref HEAD")
+    .execSync("git rev-parse --abbrev-ref HEAD", { stdio: "pipe" })
     .toString()
     .trim();
 } catch (Error) {
@@ -33,7 +36,7 @@ try {
 
 try {
   artefactTag = cp
-    .execSync("git describe")
+    .execSync("git describe", { stdio: "pipe" })
     .toString()
     .trim();
 } catch (Error) {
@@ -63,11 +66,16 @@ if (
 ) {
   publishResultsFlag = true;
 }
+let signedHost: string;
+let signedXAmzSecurityToken: string;
+let signedXAmzDate: string;
+let signedAuthorization: string;
+let authHeaders: any;
 
 const opts: VerifierOptions = {
   stateHandlers: {
     "A pet 1845563262948980200 exists": async () => {
-      const url = process.env.PACT_PROVIDER_URL;
+      const requestUrl = process.env.PACT_PROVIDER_URL;
       const pet = "1845563262948980200";
       const object = {
         id: 0,
@@ -85,13 +93,59 @@ const opts: VerifierOptions = {
         ],
         status: "available"
       };
-      const res = await supertest(url)
+      const res = await supertest(requestUrl)
         .post(`/v2/pet`)
         .send(object)
         .set("api_key", "[]")
         .expect(200);
       return Promise.resolve(res);
+    },
+    "Is authenticated": async () => {
+      const requestUrl = process.env.PACT_PROVIDER_URL;
+      const host = new url.URL(requestUrl).host;
+      const apiroute = new url.URL(requestUrl).pathname;
+      const pathname = `${apiroute}/helloworld`;
+      const options = {
+        host,
+        path: pathname,
+        headers: {}
+      };
+      await aws4.sign(options);
+      aws4.sign(options, {
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        sessionToken: process.env.AWS_SESSION_TOKEN
+      });
+      authHeaders = options.headers;
+      signedHost = authHeaders.Host;
+      signedXAmzSecurityToken = authHeaders["X-Amz-Security-Token"];
+      signedXAmzDate = authHeaders["X-Amz-Date"];
+      signedAuthorization = authHeaders.Authorization;
+      return Promise.resolve(`AWS signed headers created`);
+    },
+    "Is not authenticated": async () => {
+      signedHost = null;
+      signedXAmzSecurityToken = null;
+      signedXAmzDate = null;
+      signedAuthorization = null;
+      return Promise.resolve(`Blank aws headers created`);
     }
+  },
+  requestFilter: (req, res, next) => {
+    // over-riding request headers with AWS credentials
+    if (signedHost != null) {
+      req.headers.Host = signedHost;
+    }
+    if (signedXAmzSecurityToken != null) {
+      req.headers["X-Amz-Security-Token"] = signedXAmzSecurityToken;
+    }
+    if (signedXAmzDate != null) {
+      req.headers["X-Amz-Date"] = signedXAmzDate;
+    }
+    if (signedAuthorization != null) {
+      req.headers.Authorization = signedAuthorization;
+    }
+    next();
   },
   provider: process.env.PACT_PROVIDER_NAME, // where your service will be running during the test, either staging or localhost on CI
   providerBaseUrl: process.env.PACT_PROVIDER_URL, // where your service will be running during the test, either staging or localhost on CI
@@ -118,39 +172,3 @@ new Verifier(opts)
     console.log(error);
     process.exit(1);
   });
-
-try {
-  revision = cp
-    .execSync("git rev-parse --short HEAD")
-    .toString()
-    .trim();
-} catch (Error) {
-  throw new TypeError(
-    "Couldn't find a git commit hash, is this a git directory?"
-  );
-}
-
-try {
-  branch = cp
-    .execSync("git rev-parse --abbrev-ref HEAD")
-    .toString()
-    .trim();
-} catch (Error) {
-  throw new TypeError("Couldn't find a git branch, is this a git directory?");
-}
-
-try {
-  artefactTag = cp
-    .execSync("git describe")
-    .toString()
-    .trim();
-} catch (Error) {
-  const errorMessage = Error.message;
-  if (errorMessage.indexOf("fatal") >= 0) {
-    if (process.env.CIRCLE_BUILD_NUM) {
-      artefactTag = process.env.CIRCLE_BUILD_NUM;
-    } else {
-      throw new TypeError("Couldn't find a git tag or CIRCLE_BUILD_NUM");
-    }
-  }
-}

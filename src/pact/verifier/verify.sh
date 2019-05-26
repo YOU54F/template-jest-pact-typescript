@@ -12,4 +12,4 @@ set -o pipefail
   export AWS_SECRET_ACCESS_KEY=`echo $AWS_TEMP_CREDS | jq -r '.SecretAccessKey'`
   export AWS_SESSION_TOKEN=`echo $AWS_TEMP_CREDS | jq -r '.SessionToken'`
 
-ts-node src/pact/verifier/verifier_api_trigger.ts | grep -v Created
+npx ts-node src/pact/verifier/verify.ts | grep -v Created
