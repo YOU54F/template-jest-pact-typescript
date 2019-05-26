@@ -3,13 +3,17 @@
 ## Showcases the following
 
 - Written in Typescript
-- Utilises Jest Test Runner
+- Utilises Pact in a Jest Wrapper [jest-pact](https://github.com/YOU54F/jest-pact)
 - Uses Swagger to define API
 - Uses Swagger-cli to validate Swagger specification
 - Uses Pact.io to perform consumer driven contract tests
 - Uses Swagger-mock-validator to validate generated pact contracts
 - Publishes validated pact contracts to pact-broker (hosted on AWS EC2)
 - Tags validated contracts with branch name
+- Pact mock services with Docker
+- Wiremock services with Docker
+- Verification against AWS v4 signed API Gateway endpoints
+- Create postman collections from pacts
 
 ## Where can I see it
 
@@ -52,8 +56,65 @@
 - PACT_BROKER_BASIC_AUTH_USERNAME
 - PACT_BROKER_BASIC_AUTH_PASSWORD
 
+### Create postman collections from pacts
+
+- run `./postman-pact` to generate postman collections in `pact/postman/collections`
+- run `./postman-replace-urls` to generate env configs for postman in `pact/postman/env` where the urls are replaced with `$PACT_PROVIDER_URL`
+- run `./postman-newman` to run the postman collection against your `$PACT_PROVIDER_URL`
+
+TODO
+
+- [ ] Currently this will user `$PACT_PROVIDER_URL` for all generated postman collections, add the ability to specify a provider name, and update the url accordingly.
+
+## Build your own Pact Stub Service for your pacts in Docker
+
+`cd docker/pact-stub-service`
+
+Build the base pact image, change the name `you54f` to your own dockerhub username
+
+The Base image resides at `base.Dockerfile` which will load the pact ruby standalone, plus a healthcheck endpoint `/healthcheck` on the containers for use in AWS and other Cloud providers.
+
+`make pact_build`
+  docker build -t pact-base -f base.Dockerfile .
+`make pact_tag`
+  docker tag pact-base you54f/pact-base
+`make pact_push`
+  docker push you54f/pact-base
+
+You can then copy your pact files generated with `yarn run test` into the `docker/pact-stub-service/pacts` folder that the `Dockerfile` will use.
+
+`copy_pacts`
+  rm -rf pacts && cp -r ../../pact/pacts .
+
+Look at the `Dockerfile`
+
+```Dockerfile
+FROM you54f/pact-base
+
+ARG PACT_FILE
+
+COPY ${PACT_FILE} /pact.json
+```
+
+See the `docker/docker-compose.yml` file for how to load your pacts into the docker container.
+
+```yaml
+version: "3.1"
+
+services:
+  pact-stub-server-json:
+    build:
+      context: pact-stub-service
+      args:
+        PACT_FILE: pacts/test-consumer-json-provider.json
+    ports:
+      - "8080:8080"
+```
+
+You can run it with `cd docker && docker-compose up`
+
 ## Credits
 
 - [Pact Foundation](https://github.com/pact-foundation)
 - [Pact JS](https://github.com/pact-foundation/pact-js)
-- [Initial Proposal](https://github.com/pact-foundation/pact-js/issues/215#issuecomment-437237669) by [TimothyJones](https://github.com/TimothyJones)
+- [Initial Proposal for Jest-Pact](https://github.com/pact-foundation/pact-js/issues/215#issuecomment-437237669) by [TimothyJones](https://github.com/TimothyJones)

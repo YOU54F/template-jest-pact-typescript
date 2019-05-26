@@ -22,5 +22,12 @@ services:
         PACT_FILE: pacts/test-consumer-soap-provider.json
     ports:
       - "8082:8080"
+  pact-stub-server-aws:
+    build:
+      context: pact-stub-service
+      args:
+        PACT_FILE: pacts/test-consumer-aws-provider.json
+    ports:
+      - "8083:8080"
 
   

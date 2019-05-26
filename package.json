@@ -18,6 +18,8 @@
     "jest-junit": "6.4.0",
     "jest-pact": "0.0.10",
     "lint-staged": "8.1.6",
+    "newman": "^4.5.0",
+    "@you54f/newman-wrapper": "^1.0.9",
     "postman-pact": "^0.2.1",
     "prettier": "1.17.0",
     "supertest": "4.0.2",
