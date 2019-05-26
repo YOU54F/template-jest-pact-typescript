@@ -4,7 +4,6 @@ import { Verifier, VerifierOptions } from "@pact-foundation/pact";
 import { LogLevel } from "@pact-foundation/pact/dsl/options";
 import * as aws4 from "aws4";
 import * as cp from "child_process";
-import * as path from "path";
 import * as supertest from "supertest";
 import url = require("url");
 

@@ -3,7 +3,6 @@
 import { Verifier, VerifierOptions } from "@pact-foundation/pact";
 import { LogLevel } from "@pact-foundation/pact/dsl/options";
 import * as aws4 from "aws4";
-import * as path from "path";
 import * as supertest from "supertest";
 import url = require("url");
 
@@ -49,8 +48,7 @@ function getOpts() {
       "Is authenticated": async () => {
         const requestUrl = PACT_PROVIDER_URL;
         const host = new url.URL(requestUrl).host;
-        // const pathname = new url.URL(requestUrl).pathname;
-        const pathname = "Test/banks/560003/accounts/13354647";
+        const pathname = new url.URL(requestUrl).pathname;
         const options = {
           host,
           path: pathname,
@@ -120,7 +118,7 @@ function getOpts() {
       }
       next();
     },
-    provider: PACT_PROVIDER_NAME || "bank-check-service", // where your service will be running during the test, either staging or localhost on CI
+    provider: PACT_PROVIDER_NAME, // where your service will be running during the test, either staging or localhost on CI
     providerBaseUrl: PACT_PROVIDER_URL, // where your service will be running during the test, either staging or localhost on CI
     pactBrokerUrl: PACT_BROKER_URL,
     publishVerificationResult: publishResultsFlag || false, // ONLY SET THIS TRUE IN CI!

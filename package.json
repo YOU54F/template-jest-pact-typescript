@@ -40,7 +40,8 @@
     "pact-test": "jest --detectOpenHandles \"^.+pacttest\\.ts$\"",
     "pact-publish": "./src/pact/publisher/publish.sh",
     "delete-pacts-local": "rm ./pact/pacts/*.json",
-    "pact-verify": "./src/pact/verifier/verify.sh",
+    "pact-verify-aws": "./src/pact/verifier/verify.sh",
+    "pact-verify": "npx ts-node ./src/pact/verifier/verify.ts",
     "lint": "tslint --project . --fix"
   },
   "lint-staged": {
