@@ -76,6 +76,10 @@ jobs:
         - attach_workspace:
             at: ~/ 
         - run:
+            name: install aws cli
+            command: |
+                pip install awscli
+        - run:
             name: Provider verification with pact
             command: |
                 yarn run pact-verify
