@@ -1,4 +1,4 @@
-_note_ this repostory has now been integrated into [jest-pact](https://github.com/YOU54F/jest-pact) and has now been archived
+# _note_ this repostory has now been integrated into [jest-pact](https://github.com/YOU54F/jest-pact) and has now been archived
 
 # Pact Consumer Example in Typescript with Jest
 
