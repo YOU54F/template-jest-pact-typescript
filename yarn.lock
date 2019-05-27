@@ -544,10 +544,10 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.11.tgz#a090d88e1f40a910e6443c95493c1c035c76ebdc"
   integrity sha512-IsU1TD+8cQCyG76ZqxP0cVFnofvfzT8p/wO8ENT4jbN/KKN3grsHFgHNl/U+08s33ayX4LwI85cEhYXCOlOkMw==
 
-"@you54f/newman-wrapper@^1.0.9":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@you54f/newman-wrapper/-/newman-wrapper-1.0.10.tgz#d12c7f01c5089c23d673ab12ab4753554046bcd4"
-  integrity sha512-Fv2sB68lS30iEay4Wf0U6lkGdAEfIHrpNSXwZGkt9UHYfO/1nnj1BjHTEpGvQVXLyXfqp5svoLECEMI0dvZXsQ==
+"@you54f/newman-wrapper@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@you54f/newman-wrapper/-/newman-wrapper-1.0.11.tgz#01c8c25f56d5f09e81fcef59d5d85b99f3313fcd"
+  integrity sha512-OO6N5AXljujt6oTZgckrJf5x4ws+dZwQGmqtw7R9oewI3som4t5Em3MU8FqeFha7R5a500+0TbZwFB0FKWjDzQ==
 
 abab@^2.0.0:
   version "2.0.0"
@@ -1411,6 +1411,14 @@ cosmiconfig@^5.0.2, cosmiconfig@^5.2.0:
     is-directory "^0.3.1"
     js-yaml "^3.13.0"
     parse-json "^4.0.0"
+
+create-jest-runner@0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/create-jest-runner/-/create-jest-runner-0.4.1.tgz#eeda15bc0f9dc622ef2de5a7fd9a0f1a2c2eb62d"
+  integrity sha512-JOy675JMZ3b05F3VfAAi6Igme3pVBWu7Rt+gbW9ujAiX/Dua7+G47O7IbfiUU/FZjXhtipu/tz930b++UMGQEA==
+  dependencies:
+    jest-worker "^23.2.0"
+    throat "^4.1.0"
 
 cross-env@5.2.0:
   version "5.2.0"
@@ -3245,6 +3253,13 @@ jest-resolve@^24.8.0:
     jest-pnp-resolver "^1.2.1"
     realpath-native "^1.1.0"
 
+jest-runner-newman@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/jest-runner-newman/-/jest-runner-newman-1.0.5.tgz#e890e2b196eacddafd27b33e66e20f545f83b779"
+  integrity sha512-Guhy9lCIqpvioMzsl+tcKC9dOzNEdgKIBwlG95d00bXCfNBI1faB9lwSmakphuJS7iIp0XorhwI60wf78qgfsw==
+  dependencies:
+    create-jest-runner "0.4.1"
+
 jest-runner@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-runner/-/jest-runner-24.8.0.tgz#4f9ae07b767db27b740d7deffad0cf67ccb4c5bb"
@@ -3376,6 +3391,13 @@ jest-watcher@^24.8.0:
     chalk "^2.0.1"
     jest-util "^24.8.0"
     string-length "^2.0.0"
+
+jest-worker@^23.2.0:
+  version "23.2.0"
+  resolved "https://registry.yarnpkg.com/jest-worker/-/jest-worker-23.2.0.tgz#faf706a8da36fae60eb26957257fa7b5d8ea02b9"
+  integrity sha1-+vcGqNo2+uYOsmlXJX+ntdjqArk=
+  dependencies:
+    merge-stream "^1.0.1"
 
 jest-worker@^24.6.0:
   version "24.6.0"
@@ -5895,7 +5917,7 @@ test-exclude@^5.0.0:
     read-pkg-up "^4.0.0"
     require-main-filename "^1.0.1"
 
-throat@^4.0.0:
+throat@^4.0.0, throat@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
   integrity sha1-iQN8vJLFarGJJua6TLsgDhVnKmo=

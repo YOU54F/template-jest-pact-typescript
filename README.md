@@ -58,9 +58,12 @@
 
 ### Create postman collections from pacts
 
-- run `./postman-pact` to generate postman collections in `pact/postman/collections`
-- run `./postman-replace-urls` to generate env configs for postman in `pact/postman/env` where the urls are replaced with `$PACT_PROVIDER_URL`
-- run `./postman-newman` to run the postman collection against your `$PACT_PROVIDER_URL`
+- run `./postman/postman-pact.sh` to generate postman collections in `pact/postman/collections`
+- run `./postman/postman-replace-urls.sh` to generate env configs for postman in `pact/postman/env` where the urls are replaced with `$PACT_PROVIDER_URL`
+- run `./postman//postman-newman.sj` to run the postman collection against your `$PACT_PROVIDER_URL`
+- run newman tests with jest, via `npx jest -c jest.newman.js`
+
+Note:- There are no tests in the saved postman collections, so it will run the requests, but will not validate the responses are as per the pacts.
 
 TODO
 
