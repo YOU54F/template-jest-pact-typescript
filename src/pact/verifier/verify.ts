@@ -77,7 +77,7 @@ const opts: VerifierOptions = {
       const requestUrl = process.env.PACT_PROVIDER_URL;
       const pet = "1845563262948980200";
       const object = {
-        id: 0,
+        id: pet,
         category: {
           id: pet,
           name: "string"

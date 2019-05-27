@@ -8,7 +8,7 @@ export const postValidRequest: InteractionObject = {
     status: 200,
     body: getPetValidResponse,
     headers: {
-      "Content-Type": "application/json;charset=UTF-8"
+      "Content-Type": "application/json"
     }
   },
   withRequest: {
