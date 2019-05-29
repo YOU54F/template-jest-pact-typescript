@@ -1,5 +1,7 @@
 # Pact Consumer Workflow Example in Typescript with Jest
 
+[![CircleCI](https://circleci.com/gh/YOU54F/jest-pact-typescript.svg?style=svg)](https://circleci.com/gh/YOU54F/jest-pact-typescript)
+
 ## Showcases the following
 
 - [x] Written in Typescript
@@ -10,6 +12,15 @@
 - [x] Uses Swagger-mock-validator to validate generated pact contracts
 - [x] Publishes validated pact contracts to pact-broker (hosted on AWS EC2)
 - [x] Tags validated contracts with branch name
+- [x] Pact mock service docker base
+- [x] Pact mock service docker base examples
+- [x] circleci config
+- [x] use postman-pact to generate postman collections for pact contracts
+- [x] Example pact tests
+  - [x] AWS v4 Signed API Gateway Provider
+  - [x] Soap API provider
+  - [x] File upload API provider
+  - [x] JSON API provider
 - [x] Pact mock service docker base
 - [x] Pact mock service docker base examples
 - [x] Postman integration

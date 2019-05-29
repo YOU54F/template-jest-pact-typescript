@@ -14,7 +14,12 @@ function matcherRegexString(status: string) {
 export const getPetValidResponse = {
   id: 1845563262948980200,
   name: "doggie",
-  photoUrls: [] as string[],
-  tags: [] as string[],
+  photoUrls: ["string"],
+  tags: [
+    {
+      id: 0,
+      name: "string"
+    }
+  ],
   status: "available"
 };

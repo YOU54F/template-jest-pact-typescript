@@ -8,7 +8,7 @@ RUN go build healthcheck.go
 
 FROM debian:stretch
 
-ARG PACT_RUBY_VERSION="1.63.0"
+ARG PACT_RUBY_VERSION="1.66.0"
 
 
 WORKDIR /pact-ruby

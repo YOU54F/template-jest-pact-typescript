@@ -62,15 +62,43 @@ jobs:
             command: |
                 yarn run swagger-validate-pact     
         - run:
+            name: Validate Pact contract against Swagger spec
+            command: |
+                yarn run swagger-pact     
+        - run:
             name: Publish pacts
             command: |
                 yarn run pact-publish 
 
-  provider-verify:
+  aws-provider-verify:
     <<: *defaults  
     steps:
         - attach_workspace:
             at: ~/ 
+        - run:
+            name: set env vars for aws-provider
+            command: |
+                echo 'export PACT_PROVIDER_NAME="aws-provider"' >> $BASH_ENV
+                echo 'export PACT_PROVIDER_URL="https://3efkw1ju81.execute-api.us-east-2.amazonaws.com/default"' >> $BASH_ENV
+        - run:
+            name: install aws cli
+            command: |
+                sudo apt-get -y -qq install awscli
+        - run:
+            name: Provider verification with pact
+            command: |
+                yarn run pact-verify-aws
+
+  swagger-provider-verify:
+    <<: *defaults  
+    steps:
+        - attach_workspace:
+            at: ~/ 
+        - run:
+            name: set env vars for aws-provider
+            command: |
+                echo 'export PACT_PROVIDER_NAME="test-provider"' >> $BASH_ENV
+                echo 'export PACT_PROVIDER_URL="https://petstore.swagger.io"' >> $BASH_ENV
         - run:
             name: Provider verification with pact
             command: |
@@ -87,7 +115,11 @@ workflows:
           context: pact-consumer-example-typescript
           requires:
             - compile
-      - provider-verify:
+      - aws-provider-verify:
+          context: pact-consumer-example-typescript
+          requires:
+            - verify-test-publish
+      - swagger-provider-verify:
           context: pact-consumer-example-typescript
           requires:
             - verify-test-publish

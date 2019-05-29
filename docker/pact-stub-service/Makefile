@@ -5,4 +5,4 @@ pact_tag:
 pact_push:
 	docker push you54f/pact-base
 copy_pacts:
-	cp -r ../../pact/pacts .
+	rm -rf pacts && cp -r ../../pact/pacts .
