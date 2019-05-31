@@ -17,7 +17,7 @@
     "husky": "2.3.0",
     "jest": "24.8.0",
     "jest-junit": "6.4.0",
-    "jest-pact": "0.1.0",
+    "jest-pact": "0.3.0",
     "jest-runner-newman": "1.0.5",
     "newman": "4.5.0",
     "postman-pact": "0.2.1",
