@@ -29,7 +29,7 @@ services:
         PACT_FILE: pacts/test-consumer-aws-provider.json
     ports:
       - "8083:8080"
-  pact-stub-server-paraqms:
+  pact-stub-server-params:
     build:
       context: pact-stub-service
       args:

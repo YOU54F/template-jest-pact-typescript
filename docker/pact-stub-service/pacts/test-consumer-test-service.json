@@ -1,0 +1,36 @@
+{
+  "consumer": {
+    "name": "test-consumer"
+  },
+  "provider": {
+    "name": "test-service"
+  },
+  "interactions": [
+    {
+      "description": "a notification",
+      "providerState": "Service is up and healthy",
+      "request": {
+        "method": "GET",
+        "path": "/notifications",
+        "query": "signingId=9eb2484d-405e-4ff7-bc3a-b0181e4efb30",
+        "matchingRules": {
+          "$.query.signingId[0]": {
+            "match": "type"
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": ""
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

@@ -357,7 +357,7 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@types/aws4@^1.5.1":
+"@types/aws4@1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@types/aws4/-/aws4-1.5.1.tgz#361fadab198a030ab398269183ae3fa86e958ed9"
   integrity sha1-Nh+tqxmKAwqzmCaRg64/qG6Vjtk=
@@ -546,7 +546,7 @@
   resolved "https://registry.yarnpkg.com/@types/yargs/-/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha512-SOhuU4wNBxhhTHxYaiG5NY4HBhDIDnJF60GU+2LqHAdKKer86//e4yg69aENCtQ04n0ovz+tq2YPME5t5yp4pw==
 
-"@you54f/newman-wrapper@^1.0.11":
+"@you54f/newman-wrapper@1.0.11":
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/@you54f/newman-wrapper/-/newman-wrapper-1.0.11.tgz#01c8c25f56d5f09e81fcef59d5d85b99f3313fcd"
   integrity sha512-OO6N5AXljujt6oTZgckrJf5x4ws+dZwQGmqtw7R9oewI3som4t5Em3MU8FqeFha7R5a500+0TbZwFB0FKWjDzQ==
@@ -1695,10 +1695,15 @@ diff-sequences@^24.3.0:
   resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-24.3.0.tgz#0f20e8a1df1abddaf4d9c226680952e64118b975"
   integrity sha512-xLqpez+Zj9GKSnPWS0WZw1igGocZ+uua8+y+5dDNTT934N3QuY1sp2LkHzwiaYQGz60hMq0pjAshdeXm5VUOEw==
 
-diff@^3.1.0, diff@^3.2.0:
+diff@^3.2.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
   integrity sha512-A46qtFgd+g7pDZinpnwiRJtxbC1hpgf0uzP3iG89scHk0AUC7A1TGxf5OiiOUv/JMZR8GOt8hL900hV0bOy5xA==
+
+diff@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/diff/-/diff-4.0.1.tgz#0c667cb467ebbb5cea7f14f135cc2dba7780a8ff"
+  integrity sha512-s2+XdvhPCOF01LRQBC8hf4vhbVmI2CGS5aZnxLJlT5FtdhPCDFq80q++zK2KlrVorVDdL5BOGZ/VfLrVtYNF+Q==
 
 dom-serializer@0:
   version "0.1.1"
@@ -3243,7 +3248,7 @@ jest-resolve@^24.8.0:
     jest-pnp-resolver "^1.2.1"
     realpath-native "^1.1.0"
 
-jest-runner-newman@^1.0.5:
+jest-runner-newman@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/jest-runner-newman/-/jest-runner-newman-1.0.5.tgz#e890e2b196eacddafd27b33e66e20f545f83b779"
   integrity sha512-Guhy9lCIqpvioMzsl+tcKC9dOzNEdgKIBwlG95d00bXCfNBI1faB9lwSmakphuJS7iIp0XorhwI60wf78qgfsw==
@@ -4122,7 +4127,7 @@ neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-newman@^4.5.0:
+newman@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/newman/-/newman-4.5.0.tgz#b238fe4c5e81dc2da18be2351a882b6e43c3001e"
   integrity sha512-JXuxK9zHXFyufnI/BjA8uvI6/hkMbg6QnoSVo7J7lNcEsrJg74n/9ropV2lse+Tg2vYxwqEYUfkkEhdxkcrqgQ==
@@ -4705,7 +4710,7 @@ postman-collection@3.4.8:
     semver "6.0.0"
     uuid "3.3.2"
 
-postman-pact@^0.2.1:
+postman-pact@0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/postman-pact/-/postman-pact-0.2.1.tgz#6341e57f02590021a28f946220264bc7618d2769"
   integrity sha512-kI9HbpaXKxPmjxAQVmU8sN44Hasp0VIqxeI0SMAUGiIt12AyAa7z1p0RrX71TU6PgwiyfCX0yroztCvbG2kM/g==
@@ -5151,7 +5156,7 @@ rimraf@2.6.2:
   dependencies:
     glob "^7.0.5"
 
-rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.3:
+rimraf@2.6.3, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
@@ -6029,13 +6034,13 @@ ts-jest@24.0.2:
     semver "^5.5"
     yargs-parser "10.x"
 
-ts-node@8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.1.0.tgz#8c4b37036abd448577db22a061fd7a67d47e658e"
-  integrity sha512-34jpuOrxDuf+O6iW1JpgTRDFynUZ1iEqtYruBqh35gICNjN8x+LpVcPAcwzLPi9VU6mdA3ym+x233nZmZp445A==
+ts-node@8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.2.0.tgz#4a89754b00560bb24cd54526e1685fa38c45f240"
+  integrity sha512-m8XQwUurkbYqXrKqr3WHCW310utRNvV5OnRVeISeea7LoCWVcdfeB/Ntl8JYWFh+WRoUAdBgESrzKochQt7sMw==
   dependencies:
     arg "^4.1.0"
-    diff "^3.1.0"
+    diff "^4.0.1"
     make-error "^1.1.1"
     source-map-support "^0.5.6"
     yn "^3.0.0"
@@ -6123,10 +6128,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.4.5:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
-  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
+typescript@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.5.1.tgz#ba72a6a600b2158139c5dd8850f700e231464202"
+  integrity sha512-64HkdiRv1yYZsSe4xC1WVgamNigVYjlssIoaH2HcZF0+ijsk5YK2g0G34w9wJkze8+5ow4STd22AynfO6ZYYLw==
 
 uglify-js@^3.1.4:
   version "3.5.15"

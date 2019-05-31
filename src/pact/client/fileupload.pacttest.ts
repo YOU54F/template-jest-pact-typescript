@@ -2,12 +2,19 @@ import { InteractionObject } from "@pact-foundation/pact";
 import { like, term } from "@pact-foundation/pact/dsl/matchers";
 import { readFileSync } from "fs";
 import * as jestpact from "jest-pact";
+import * as supertest from "supertest";
 
 const port = 9880;
 
-jestpact.pactWithSuperTest(
+const getClient = () => {
+  const url = `http://localhost:${port}`;
+
+  return supertest(url);
+};
+
+jestpact.pactWith(
   { consumer: "test-consumer", provider: "file-upload-provider", port },
-  async (provider: any, client: any) => {
+  async (provider: any) => {
     describe("file upload service", () => {
       test("should successfully allow upload of a base 64 encoded pdf", async () => {
         const pdfname: string = "test-base64.pdf";
@@ -45,7 +52,7 @@ jestpact.pactWithSuperTest(
 
         await provider.addInteraction(interaction);
 
-        await client
+        await getClient()
           .post("/upload")
           .set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIXVCJ9")
           .field("test", "test")
@@ -88,7 +95,7 @@ jestpact.pactWithSuperTest(
 
         await provider.addInteraction(interaction);
 
-        await client
+        await getClient()
           .post("/upload")
           .set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIXVCJ9")
           .field("test", "test")
