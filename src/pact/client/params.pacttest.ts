@@ -15,7 +15,7 @@ const getClient = (port: number) => {
 describe("Test Service service provider pact", () => {
   const provider = getProvider({
     pactPort: 12000,
-    provider: "test-service"
+    provider: "param-provider"
   });
 
   beforeAll(async () => await provider.setup());
