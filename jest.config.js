@@ -10,5 +10,6 @@ module.exports = {
   },
   testMatch: ["**/*.test.(ts|js)", "**/*.it.(ts|js)", "**/*.pacttest.(ts|js)"],
   testEnvironment: "node",
-  reporters: ["default", "jest-junit"]
+  reporters: ["default", "jest-junit"],
+  watchPathIgnorePatterns: [".json",".logs"]
 };

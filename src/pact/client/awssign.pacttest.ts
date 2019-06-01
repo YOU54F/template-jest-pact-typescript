@@ -1,13 +1,15 @@
 import { InteractionObject } from "@pact-foundation/pact";
-import { like, term } from "@pact-foundation/pact/dsl/matchers";
-import { readFileSync } from "fs";
 import * as jestpact from "jest-pact";
+import * as supertest from "supertest";
 
-const port = 9777;
+jestpact.pactWith(
+  { consumer: "test-consumer", provider: "aws-provider" },
+  async (provider: any) => {
+    const client = () => {
+      const url = `${provider.mockService.baseUrl}`;
+      return supertest(url);
+    };
 
-jestpact.pactWithSuperTest(
-  { consumer: "test-consumer", provider: "aws-provider", port },
-  async (provider: any, client: any) => {
     describe("aws signed gateway test", () => {
       test("should be able to access /helloworld when authenticated", async () => {
         const apiPath = "/helloworld";
@@ -28,10 +30,10 @@ jestpact.pactWithSuperTest(
             status: 200
           }
         };
-
         await provider.addInteraction(interaction);
-
-        await client.get(apiPath).expect(200);
+        await client()
+          .get(apiPath)
+          .expect(200);
       });
       test("should not be able to access /helloworld when not authenticated", async () => {
         const apiPath = "/helloworld";
@@ -55,7 +57,9 @@ jestpact.pactWithSuperTest(
 
         await provider.addInteraction(interaction);
 
-        await client.get(apiPath).expect(403);
+        await client()
+          .get(apiPath)
+          .expect(403);
       });
     });
   }

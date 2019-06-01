@@ -1,8 +1,7 @@
 import { InteractionObject } from "@pact-foundation/pact";
 import * as fs from "fs";
 import * as jestpact from "jest-pact";
-
-const port = 5100;
+import * as supertest from "supertest";
 
 // http://www.soapclient.com/xml/soapresponder.wsdl
 const requestPath = "/xml/soapresponder.wsdl";
@@ -15,9 +14,14 @@ const resumeResponse = fs.readFileSync(
   "utf-8"
 );
 
-jestpact.pactWithSuperTest(
-  { consumer: "test-consumer", provider: "soap-provider", port },
-  async (provider: any, client: any) => {
+jestpact.pactWith(
+  { consumer: "test-consumer", provider: "soap-provider" },
+  async (provider: any) => {
+    const client = () => {
+      const url = `${provider.mockService.baseUrl}`;
+      return supertest(url);
+    };
+
     describe("Simple Soap Request", () => {
       it("should add two numbers", async () => {
         const interaction: InteractionObject = {
@@ -42,7 +46,7 @@ jestpact.pactWithSuperTest(
 
         await provider.addInteraction(interaction);
 
-        await client
+        await client()
           .post(requestPath)
           .set("Content-Type", "text/xml;charset=UTF-8")
           .send(resumeRequest)
