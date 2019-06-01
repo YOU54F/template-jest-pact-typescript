@@ -14,7 +14,7 @@ jestpact.pactWith(
   { consumer: "test-consumer", provider: "param-provider", port },
   async (provider: any) => {
     describe("query param matcher test", () => {
-      it("should respond 200 when a notification is send", async () => {
+      it("should respond 200 when a notification is sent", async () => {
         const interaction: InteractionObject = {
           state: "Service is up and healthy",
           uponReceiving: "a notification",
@@ -46,21 +46,16 @@ jestpact.pactWith(
     });
 
     describe("path param matcher test", () => {
-      it("should respond 200 when a notification is send", async () => {
-        // const signingId = regex({generate: '9eb2484d-405e-4ff7-bc3a-b0181e4efb30', matcher: "\\d+"})
-
+      it("should respond 200 when a notification2 is send", async () => {
         const interaction: InteractionObject = {
           state: "Service is up and healthy",
-          uponReceiving: "a notification",
+          uponReceiving: "a notification2",
           withRequest: {
             method: "GET",
             path: term({
               generate: "/notifications?signingId=123",
               matcher: "/notifications\\?signingId\\=\\d+"
             })
-            // query: {
-            //   signingId:
-            // }
           },
           willRespondWith: {
             status: 200,
@@ -74,8 +69,7 @@ jestpact.pactWith(
         await provider.addInteraction(interaction);
 
         await getClient()
-          .get("/notifications")
-          .query("signingId=123")
+          .get("/notifications?signingId=123")
           .expect(200);
       });
     });
