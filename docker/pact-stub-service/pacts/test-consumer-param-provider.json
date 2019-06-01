@@ -3,7 +3,7 @@
     "name": "test-consumer"
   },
   "provider": {
-    "name": "test-service"
+    "name": "param-provider"
   },
   "interactions": [
     {
@@ -15,7 +15,8 @@
         "query": "signingId=9eb2484d-405e-4ff7-bc3a-b0181e4efb30",
         "matchingRules": {
           "$.query.signingId[0]": {
-            "match": "type"
+            "match": "regex",
+            "regex": "\\d+"
           }
         }
       },

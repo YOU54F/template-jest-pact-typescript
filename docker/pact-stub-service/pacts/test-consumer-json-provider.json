@@ -19,16 +19,19 @@
       "response": {
         "status": 200,
         "headers": {
-          "Content-Type": "application/json;charset=UTF-8"
+          "Content-Type": "application/json"
         },
         "body": {
           "id": 1845563262948980200,
           "name": "doggie",
           "photoUrls": [
-
+            "string"
           ],
           "tags": [
-
+            {
+              "id": 0,
+              "name": "string"
+            }
           ],
           "status": "available"
         }
