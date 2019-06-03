@@ -602,7 +602,7 @@ ajv@^5.1.0, ajv@^5.2.3:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-ajv@^6.5.5:
+ajv@^6.10.0, ajv@^6.5.5:
   version "6.10.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.10.0.tgz#90d0d54439da587cd7e843bfb7045f50bd22bdf1"
   integrity sha512-nffhOpkymDECQyR0mnsUtoCE8RlX38G0rYP+wgLWFyZuUyuuojSSvi/+euOiQBIn63whYwYVIIH1TvE3tu4OEg==
@@ -1313,7 +1313,7 @@ commander@2.17.1:
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
   integrity sha512-wPMUt6FnH2yzG95SA6mzjQOEKUU3aLaDEmzs1ti+1E9h+CsrZghRlqEM/EJ4KscsQVG8uNN4uVreUeT8+drlgg==
 
-commander@2.20.0, commander@^2.12.1, commander@^2.14.1, commander@^2.16.0, commander@^2.20.0, commander@^2.7.1, commander@^2.9.0, commander@~2.20.0:
+commander@2.20.0, commander@^2.12.1, commander@^2.14.1, commander@^2.16.0, commander@^2.7.1, commander@^2.9.0, commander@~2.20.0:
   version "2.20.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.0.tgz#d58bb2b5c1ee8f87b0d340027e9e94e222c5a422"
   integrity sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
@@ -1529,7 +1529,7 @@ decamelize@^1.2.0:
   resolved "https://registry.yarnpkg.com/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
   integrity sha1-9lNNFRSCabIDUue+4m9QH5oZEpA=
 
-decimal.js@^10.1.1:
+decimal.js@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.2.0.tgz#39466113a9e036111d02f82489b5fd6b0b5ed231"
   integrity sha512-vDPw+rDgn3bZe1+F/pyEwb1oMG2XTlRVgAa6B4KccTEpYgF8w6eQllVbQcfIJnZyvzFtFpxnpGtx8dd7DJp/Rw==
@@ -5048,7 +5048,7 @@ request@2.87.0:
     tunnel-agent "^0.6.0"
     uuid "^3.1.0"
 
-request@^2.87.0, request@^2.88.0:
+request@^2.87.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha512-NAqBSrijGLZdM0WZNsInLJpkJokL72XYjUpnB0iwsRgxh7dB6COrHnTBNwN0E+lHDAJzu7kLAkDeY08z2/A0hg==
@@ -5768,22 +5768,22 @@ swagger-mock-validator@6.0.1:
     validator "^9.0.0"
     verror "^1.8.1"
 
-swagger-pact@6.0.1-edge:
-  version "6.0.1-edge"
-  resolved "https://registry.yarnpkg.com/swagger-pact/-/swagger-pact-6.0.1-edge.tgz#2c65806ca767233c9aa676dafd4f754c40285079"
-  integrity sha512-bNkxcXGtDoxIz8nMlHCaXc8VxJMxYd7c7XXEHqwoO9c2vxOc3zQKLJkxkH3+K+pplox+ASQ9hnwPPB4/VYz4qQ==
+swagger-pact@6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/swagger-pact/-/swagger-pact-6.0.5.tgz#0dda3aade9e49007345beeb5bca9a0c001481c8b"
+  integrity sha512-geq60Uv+NyKyTOAeY46YckKAoPfizgNCW6f9gcV//VFUSOFzgGATtXdzYJ8Fhz3Qz0b2rxD51coq0XVPPjHYng==
   dependencies:
-    ajv "^5.2.3"
-    commander "^2.20.0"
-    decimal.js "^10.1.1"
-    js-yaml "^3.13.1"
+    ajv "^6.10.0"
+    commander "^2.16.0"
+    decimal.js "^10.2.0"
+    js-yaml "^3.12.0"
     jsonpointer "^4.0.1"
-    lodash "^4.17.11"
-    request "^2.88.0"
-    swagger-parser "6.0.5"
-    uuidjs "^4.2.1"
+    lodash "^4.17.10"
+    request "^2.87.0"
+    swagger-parser "5.0.2"
+    uuidjs "^4.0.3"
     validator "^10.11.0"
-    verror "^1.10.0"
+    verror "^1.8.1"
 
 swagger-parser@5.0.2:
   version "5.0.2"
@@ -5799,7 +5799,7 @@ swagger-parser@5.0.2:
     swagger-schema-official "2.0.0-bab6bed"
     z-schema "^3.19.1"
 
-swagger-parser@6.0.5, swagger-parser@^6.0.3:
+swagger-parser@^6.0.3:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/swagger-parser/-/swagger-parser-6.0.5.tgz#9475971c7b2c7b0402e1cdee35182fe78b90673b"
   integrity sha512-UL47eu4+GRm5y+N7J+W6QQiqAJn2lojyqgMwS0EZgA55dXd5xmpQCsjUmH/Rf0eKDiG1kULc9VS515PxAyTDVw==
@@ -6239,7 +6239,7 @@ uuid@3.3.2, uuid@^3.0.0, uuid@^3.1.0, uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
 
-uuidjs@^4.0.3, uuidjs@^4.2.1:
+uuidjs@^4.0.3:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.2.1.tgz#078e259320cc96a1c6bcd5fa9053f1656ef3c6e5"
   integrity sha512-LNl5tqW081cMcn3+e1BqPDZIDNOooxrPHs7JN1j8pK7wFx0H/ziVUGVlALn+pNJ2jwT9RBHHQsKEnvgkOuYSDw==
@@ -6277,7 +6277,7 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-verror@1.10.0, verror@^1.10.0, verror@^1.8.1:
+verror@1.10.0, verror@^1.8.1:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.10.0.tgz#3a105ca17053af55d6e270c1f8288682e18da400"
   integrity sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=
