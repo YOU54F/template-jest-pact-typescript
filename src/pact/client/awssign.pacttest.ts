@@ -29,7 +29,7 @@ jestpact.pactWith(
               "Content-Type": "application/json"
             },
             body: {
-              message: "Hello from Lambda!!!!!"
+              message: "Hello from Lambda!"
             },
             status: 200
           }
