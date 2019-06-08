@@ -3,15 +3,21 @@
     "name": "test-consumer"
   },
   "provider": {
-    "name": "aws-provider"
+    "name": "request-path-provider"
   },
   "interactions": [
     {
-      "description": "a validated request to an api protected gateway",
-      "providerState": "Is authenticated",
+      "description": "a GET to /request/path/1",
+      "providerState": "Any",
       "request": {
         "method": "GET",
-        "path": "/helloworld"
+        "path": "/request/path/1",
+        "matchingRules": {
+          "$.path": {
+            "match": "regex",
+            "regex": "\\/request\\/path\\/(?![2]$)\\d+"
+          }
+        }
       },
       "response": {
         "status": 200,
@@ -19,24 +25,26 @@
           "Content-Type": "application/json"
         },
         "body": {
-          "message": "Hello from Lambda!!!!!"
+          "id": "1",
+          "status": "LOOSE_MATCH"
         }
       }
     },
     {
-      "description": "a non-validated request to an api protected gateway",
-      "providerState": "Is not authenticated",
+      "description": "a GET to /request/path/2",
+      "providerState": "Any",
       "request": {
         "method": "GET",
-        "path": "/helloworld"
+        "path": "/request/path/2"
       },
       "response": {
-        "status": 403,
+        "status": 200,
         "headers": {
           "Content-Type": "application/json"
         },
         "body": {
-          "message": "Missing Authentication Token"
+          "id": "2",
+          "status": "RIGID_MATCH"
         }
       }
     }

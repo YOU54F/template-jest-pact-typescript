@@ -3,7 +3,11 @@ import * as jestpact from "jest-pact";
 import * as supertest from "supertest";
 
 jestpact.pactWith(
-  { consumer: "test-consumer", provider: "aws-provider" },
+  {
+    consumer: "test-consumer",
+    provider: "aws-provider",
+    pactfileWriteMode: "overwrite"
+  },
   async (provider: any) => {
     const client = () => {
       const url = `${provider.mockService.baseUrl}`;
@@ -18,14 +22,14 @@ jestpact.pactWith(
           uponReceiving: "a validated request to an api protected gateway",
           withRequest: {
             method: "GET",
-            path: apiPath
+            path: "/helloworld"
           },
           willRespondWith: {
             headers: {
               "Content-Type": "application/json"
             },
             body: {
-              message: "Hello from Lambda!"
+              message: "Hello from Lambda!!!!!"
             },
             status: 200
           }
