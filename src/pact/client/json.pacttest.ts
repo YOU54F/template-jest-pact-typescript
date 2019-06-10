@@ -17,7 +17,6 @@ jestpact.pactWith(
         .get("/v2/pet/1845563262948980200")
         .set("api_key", "[]")
         .expect(200, json.getPetValidResponse);
-      await provider.verify();
     });
   }
 );
