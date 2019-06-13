@@ -22,7 +22,7 @@
     "newman": "4.5.0",
     "postman-pact": "0.2.1",
     "rimraf": "2.6.3",
-    "lint-staged": "8.2.0",
+    "lint-staged": "8.2.1",
     "prettier": "1.18.2",
     "supertest": "4.0.2",
     "swagger-cli": "2.2.2",
