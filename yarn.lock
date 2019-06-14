@@ -599,7 +599,7 @@ acorn@^6.0.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
   integrity sha512-jPTiwtOxaHNaAPg/dmrJ/beuzLRnXtB0kQPQ8JpotKJgTB6rX6c8mlf315941pyjBSaPg8NHXS9fhP4u17DpGA==
 
-ajv@^5.1.0, ajv@^5.2.3:
+ajv@^5.1.0:
   version "5.5.2"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
   integrity sha1-c7Xuyj+rZT49P5Qis0GtQiBdyWU=
@@ -1549,11 +1549,6 @@ decimal.js@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-10.2.0.tgz#39466113a9e036111d02f82489b5fd6b0b5ed231"
   integrity sha512-vDPw+rDgn3bZe1+F/pyEwb1oMG2XTlRVgAa6B4KccTEpYgF8w6eQllVbQcfIJnZyvzFtFpxnpGtx8dd7DJp/Rw==
-
-decimal.js@^9.0.1:
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/decimal.js/-/decimal.js-9.0.1.tgz#1cc8b228177da7ab6498c1cc06eb130a290e6e1e"
-  integrity sha512-2h0iKbJwnImBk4TGk7CG1xadoA0g3LDPlQhQzbZ221zvG0p2YVUedbKIPsOZXKZGx6YmZMJKYOalpCMxSdDqTQ==
 
 decode-uri-component@^0.2.0:
   version "0.2.0"
@@ -5790,21 +5785,21 @@ swagger-methods@^2.0.0:
   resolved "https://registry.yarnpkg.com/swagger-methods/-/swagger-methods-2.0.0.tgz#e1260876e7638b8a5d61ae5735ad9d5e97f4f09d"
   integrity sha512-afMNP6XtF7w4XB2pFuF07JNrHGaKoppwC0O3Zrkv0PWGbMT3KyFYpk4lzdcax7RYV1JgMZeatX8ndYjL2y+0tQ==
 
-swagger-mock-validator@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-6.0.1.tgz#1b156b919178e201245238a25a4de7134030d0b0"
-  integrity sha512-DdkK/lyGG2nov2z9yOiuBlCk4qgxTY+g4Vd1c6WXjpvIfHcbpfi+mk0DngfUaBs3k6UY//Pt4+96odZsX7osgQ==
+swagger-mock-validator@6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-6.0.2.tgz#6470de147c57f631e9c55b11d1ef281e65d965fc"
+  integrity sha512-Lr6uR83/3gWKRXnoYGB/vj+k9O5GLAiZ8tsf/dxxcCYS8Bv/ZiA+ASSuoLIaZnnPF8G1dTaEJQjjYT7RFjBsDw==
   dependencies:
-    ajv "^5.2.3"
+    ajv "^6.10.0"
     commander "^2.16.0"
-    decimal.js "^9.0.1"
+    decimal.js "^10.2.0"
     js-yaml "^3.12.0"
     jsonpointer "^4.0.1"
     lodash "^4.17.10"
     request "^2.87.0"
     swagger-parser "5.0.2"
     uuidjs "^4.0.3"
-    validator "^9.0.0"
+    validator "^10.11.0"
     verror "^1.8.1"
 
 swagger-pact@6.0.5:
@@ -6305,11 +6300,6 @@ validator@^10.0.0, validator@^10.11.0:
   version "10.11.0"
   resolved "https://registry.yarnpkg.com/validator/-/validator-10.11.0.tgz#003108ea6e9a9874d31ccc9e5006856ccd76b228"
   integrity sha512-X/p3UZerAIsbBfN/IwahhYaBbY68EN/UQBWHtsbXGT5bfrH/p4NQzUCG1kF/rtKaNpnJ7jAu6NGTdSNtyNIXMw==
-
-validator@^9.0.0:
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-9.4.1.tgz#abf466d398b561cd243050112c6ff1de6cc12663"
-  integrity sha512-YV5KjzvRmSyJ1ee/Dm5UED0G+1L4GZnLN3w6/T+zZm8scVua4sOhYKWTUrKa0H/tMiJyO9QLHMPN+9mB/aMunA==
 
 vary@~1.1.2:
   version "1.1.2"
