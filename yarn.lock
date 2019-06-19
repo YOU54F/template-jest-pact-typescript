@@ -778,6 +778,11 @@ async@2.6.2:
   dependencies:
     lodash "^4.17.11"
 
+async@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.0.1.tgz#dfeb34657d1e63c94c0eee424297bf8a2c9a8182"
+  integrity sha512-ZswD8vwPtmBZzbn9xyi8XBQWXH3AvOQ43Za1KWYq7JeycrZuUYzx01KvHcVbXltjqH4y0MWrQ33008uLTqXuDw==
+
 async@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async/-/async-1.0.0.tgz#f8fc04ca3a13784ade9e1641af98578cfbd647a9"
@@ -2076,6 +2081,11 @@ eyes@0.1.x:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/eyes/-/eyes-0.1.8.tgz#62cf120234c683785d902348a800ef3e0cc20bc0"
   integrity sha1-Ys8SAjTGg3hdkCNIqADvPgzCC8A=
+
+faker@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/faker/-/faker-4.1.0.tgz#1e45bbbecc6774b3c195fad2835109c6d748cc3f"
+  integrity sha1-HkW7vsxndLPBlfrSg1EJxtdIzD8=
 
 fast-deep-equal@^1.0.0:
   version "1.1.0"
@@ -4135,12 +4145,12 @@ neo-async@^2.6.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-newman@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/newman/-/newman-4.5.0.tgz#b238fe4c5e81dc2da18be2351a882b6e43c3001e"
-  integrity sha512-JXuxK9zHXFyufnI/BjA8uvI6/hkMbg6QnoSVo7J7lNcEsrJg74n/9ropV2lse+Tg2vYxwqEYUfkkEhdxkcrqgQ==
+newman@4.5.1:
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/newman/-/newman-4.5.1.tgz#0cabda24ae15c53d773134acc71c78b80221f121"
+  integrity sha512-JzC9MehIGUMWFCv1BOePztUrk9StE21iS2KEHzy7L/ayPHTWK3/cBGqr8s/cFaVLHIqQiBGRkZiKrVXUKDmYLA==
   dependencies:
-    async "2.6.2"
+    async "3.0.1"
     chardet "0.7.0"
     cli-progress "2.1.1"
     cli-table3 "0.5.1"
@@ -4151,15 +4161,15 @@ newman@4.5.0:
     filesize "4.1.2"
     lodash "4.17.11"
     mkdirp "0.5.1"
-    postman-collection "3.4.8"
-    postman-collection-transformer "3.1.0"
-    postman-request "2.88.1-postman.10"
-    postman-runtime "7.14.0"
+    postman-collection "3.5.0"
+    postman-collection-transformer "3.1.1"
+    postman-request "2.88.1-postman.11"
+    postman-runtime "7.15.1"
     pretty-ms "5.0.0"
-    semver "6.0.0"
+    semver "6.1.1"
     serialised-error "1.1.3"
     word-wrap "1.2.3"
-    xmlbuilder "13.0.1"
+    xmlbuilder "13.0.2"
 
 next-tick@1, next-tick@^1.0.0:
   version "1.0.0"
@@ -4692,10 +4702,10 @@ postcss@^7.0.5:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postman-collection-transformer@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/postman-collection-transformer/-/postman-collection-transformer-3.1.0.tgz#53fe6118b61cea417b1aec235ea453b6ca8173ab"
-  integrity sha512-VIKteElep2OhEmG4sbN9jAJFEXTxh/1biX2a1AGKi8TBnCBuZLjHbBO+DwHIlHKmeygj/SKEv+QJdoE4eZmh9A==
+postman-collection-transformer@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/postman-collection-transformer/-/postman-collection-transformer-3.1.1.tgz#ab800660125aad52efccc93c136b480d9d251abf"
+  integrity sha512-wMehfCx+nuSPQZOCq95Yl+EVM715+e22IyROEkFC/CdYUeW15U5xHVpaF25GXOi7WGwNTPANf6NuOdK6t8h1OQ==
   dependencies:
     commander "2.20.0"
     inherits "2.0.3"
@@ -4704,12 +4714,13 @@ postman-collection-transformer@3.1.0:
     semver "6.0.0"
     strip-json-comments "3.0.1"
 
-postman-collection@3.4.8:
-  version "3.4.8"
-  resolved "https://registry.yarnpkg.com/postman-collection/-/postman-collection-3.4.8.tgz#3bb7455dd32b6d7f3526cee545901233941117c1"
-  integrity sha512-QOR6hTnBkQam8x1Y1UELJXZCXRzuctFbk5Yd6WDJvdy3xfPHipad10hJQXZTQB4hZsS/sjNSRKPdLtI6FBZ1rg==
+postman-collection@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/postman-collection/-/postman-collection-3.5.0.tgz#3cb4bf5eb4898b91822db3391ab597e9b30e1f44"
+  integrity sha512-Js7dWAxi7Ie/U/aOpMBYHMN+2msMgAKgG6YcrMlVyu4IZOUZAz1l1YlMQM99dGphl712DphgoFbAh9cyuxJbnA==
   dependencies:
     escape-html "1.0.3"
+    faker "4.1.0"
     file-type "3.9.0"
     http-reasons "0.1.0"
     iconv-lite "0.4.24"
@@ -4720,7 +4731,7 @@ postman-collection@3.4.8:
     mime-types "2.1.24"
     postman-url-encoder "1.0.2"
     sanitize-html "1.20.1"
-    semver "6.0.0"
+    semver "6.1.1"
     uuid "3.3.2"
 
 postman-pact@0.2.1:
@@ -4732,10 +4743,10 @@ postman-pact@0.2.1:
     commander "2.17.1"
     debug "3.1.0"
 
-postman-request@2.88.1-postman.10:
-  version "2.88.1-postman.10"
-  resolved "https://registry.yarnpkg.com/postman-request/-/postman-request-2.88.1-postman.10.tgz#9824351e0ac444f4ef57c9b8d517b2d163d53da3"
-  integrity sha512-bIKdai9VqM6HGKPGJYqRCEnEPM4IZ4WyX1febqAw/124++kFRT+gjRZFG0QTtTs8CulQbU7jwictFNMoxkZavw==
+postman-request@2.88.1-postman.11:
+  version "2.88.1-postman.11"
+  resolved "https://registry.yarnpkg.com/postman-request/-/postman-request-2.88.1-postman.11.tgz#c0651fabc6e156ba7a2745359e50d795d81fc85e"
+  integrity sha512-HCNQGPrCmW2Uy7cGjYWcEIBxv3Kl2F1IGtgPtpTJ8OLyhr23JXxWZXYj1hvJ5MUgxv8cztj2DeVXZMOi/yFpyw==
   dependencies:
     "@postman/tunnel-agent" "^0.6.2"
     aws-sign2 "~0.7.0"
@@ -4760,10 +4771,10 @@ postman-request@2.88.1-postman.10:
     tough-cookie "~2.5.0"
     uuid "^3.3.2"
 
-postman-runtime@7.14.0:
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/postman-runtime/-/postman-runtime-7.14.0.tgz#ca45c9fbcc94b5b76531f7f681c36ec3dc708a00"
-  integrity sha512-XYl9C7ERp2TwC7JFFuzda5ZjbHMtor5yYau8r6HympZo7FXNEXM6fl/h5g3axk+/jWUVuEU7uhVTlffqzh1WQQ==
+postman-runtime@7.15.1:
+  version "7.15.1"
+  resolved "https://registry.yarnpkg.com/postman-runtime/-/postman-runtime-7.15.1.tgz#a5ba1eda89e6ac4bc75f4eb6bd8b437c746f04d5"
+  integrity sha512-uPUH58sxSxwS44Q8rE7kfqsRWMDQ+8H7nyx3DCDii4JHmhmA8j6XPcbVpboxY8gW0S4oYUK8pgk0EN5wJ31LMA==
   dependencies:
     async "2.6.2"
     aws4 "1.8.0"
@@ -4776,19 +4787,19 @@ postman-runtime@7.14.0:
     lodash "4.17.11"
     node-oauth1 "1.2.2"
     performance-now "2.1.0"
-    postman-collection "3.4.8"
-    postman-request "2.88.1-postman.10"
-    postman-sandbox "3.2.7"
+    postman-collection "3.5.0"
+    postman-request "2.88.1-postman.11"
+    postman-sandbox "3.2.9"
     postman-url-encoder "1.0.2"
     resolve-from "5.0.0"
     serialised-error "1.1.3"
     tough-cookie "3.0.1"
     uuid "3.3.2"
 
-postman-sandbox@3.2.7:
-  version "3.2.7"
-  resolved "https://registry.yarnpkg.com/postman-sandbox/-/postman-sandbox-3.2.7.tgz#8b09d3db410a16f19360721a6ce90ad9e2241e52"
-  integrity sha512-S9lpV9ImK8OmaUYcn4HEaxkE7MynoPaXwQTi4GEIX2NooE38na7j5a+POAOPMBZKwHTF2vEXpD/N4Pwn3EHBhA==
+postman-sandbox@3.2.9:
+  version "3.2.9"
+  resolved "https://registry.yarnpkg.com/postman-sandbox/-/postman-sandbox-3.2.9.tgz#b714c106e018166438d38a2e205613b92e9fc8cf"
+  integrity sha512-u+BP1se2oqLjQUXLip1llg9oyCjC27x7XKxK311ytHKk5PSnARIjs8viTX9EaLn3besOBpVb9IX5RR5rQz73ww==
   dependencies:
     inherits "2.0.3"
     lodash "4.17.11"
@@ -5292,7 +5303,7 @@ semver@6.0.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.0.0.tgz#05e359ee571e5ad7ed641a6eec1e547ba52dea65"
   integrity sha512-0UewU+9rFapKFnlbirLi3byoOuhrSsli/z/ihNnvM24vgF+8sNBiI1LZPBSH9wJKUwaUbw+s3hToDLCXkrghrQ==
 
-semver@^6.0.0:
+semver@6.1.1, semver@^6.0.0:
   version "6.1.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.1.1.tgz#53f53da9b30b2103cd4f15eab3a18ecbcb210c9b"
   integrity sha512-rWYq2e5iYW+fFe/oPPtYJxYgjBm8sC4rmoGdUOgBB7VnwKt6HrL793l2voH1UlsyYZpJ4g0wfjnTEO1s1NP2eQ==
@@ -6459,10 +6470,10 @@ xml@^1.0.1:
   resolved "https://registry.yarnpkg.com/xml/-/xml-1.0.1.tgz#78ba72020029c5bc87b8a81a3cfcd74b4a2fc1e5"
   integrity sha1-eLpyAgApxbyHuKgaPPzXS0ovweU=
 
-xmlbuilder@13.0.1:
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-13.0.1.tgz#0770a63c8672e38eea413ed13080de4fdc01f0ef"
-  integrity sha512-qdGT2O3+OWTVY5HqESkgbOd8NE5MWUIuKxXd9PNQOhVC83SRfdje+Ku4vjFCaEpL6JZqlTOcKN33TlCEbApNcA==
+xmlbuilder@13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-13.0.2.tgz#02ae33614b6a047d1c32b5389c1fdacb2bce47a7"
+  integrity sha512-Eux0i2QdDYKbdbA6AM6xE4m6ZTZr4G4xF9kahI2ukSEMCzwce2eX9WlTI5J3s+NU7hpasFsr8hWIONae7LluAQ==
 
 xtend@^4.0.0, xtend@^4.0.1:
   version "4.0.1"
