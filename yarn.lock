@@ -4847,10 +4847,10 @@ netmask@^1.0.6:
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
   integrity sha1-ICl+idhvb2QA8lDZ9Pa0wZRfzTU=
 
-newman@4.5.3:
-  version "4.5.3"
-  resolved "https://registry.yarnpkg.com/newman/-/newman-4.5.3.tgz#d97b3ae70d537a03c04fbd9abcc0049bd446d8e2"
-  integrity sha512-JSoD1oBcJtXUK8gTb3VrrP8rXffzQe6bItF1dkhCTbkOGgqSDu6/8U1SiDMqP9VPmPaO9Z4u4o/ISRiz3KjDjg==
+newman@4.5.4:
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/newman/-/newman-4.5.4.tgz#ab8494041cf5f3c5d959b37e82da20b7cf850af0"
+  integrity sha512-x+gthfoRuW0oEvVXd3G8FzKtWVhldib8hvi/e80btaZ/C6dc/gyls8g1njgg9obLnqWhCyaDa43wEPW9DF6n6A==
   dependencies:
     async "3.1.0"
     chardet "0.8.0"
@@ -4866,7 +4866,7 @@ newman@4.5.3:
     postman-collection "3.5.1"
     postman-collection-transformer "3.1.2"
     postman-request "2.88.1-postman.13"
-    postman-runtime "7.16.1"
+    postman-runtime "7.16.2"
     pretty-ms "5.0.0"
     semver "6.3.0"
     serialised-error "1.1.3"
@@ -5594,10 +5594,10 @@ postman-request@2.88.1-postman.13:
     tough-cookie "~2.5.0"
     uuid "^3.3.2"
 
-postman-runtime@7.16.1:
-  version "7.16.1"
-  resolved "https://registry.yarnpkg.com/postman-runtime/-/postman-runtime-7.16.1.tgz#600a42564a0e74eff34dfd75425328b0e218c1f7"
-  integrity sha512-vi/0aWpXjhuZfEHmg1ZTNYbceIlbk8481JXCVqsrC4WbDAiXSGxy5Mld/99eT0vci2oCr+qhTtDe3ZmRFl5ucA==
+postman-runtime@7.16.2:
+  version "7.16.2"
+  resolved "https://registry.yarnpkg.com/postman-runtime/-/postman-runtime-7.16.2.tgz#c379ef3fd50b1c2d30768bbcfd9ea4a99c5e4b4e"
+  integrity sha512-7jtkkc1z6VLzc5EuLxuv0K4iPPdWYwV5q8xWYd5KalPA1xSQTuN8yvca2u4r5SyQqIskL6r2js0wcO5DA4l7ig==
   dependencies:
     async "2.6.2"
     aws4 "1.8.0"
@@ -5613,23 +5613,23 @@ postman-runtime@7.16.1:
     performance-now "2.1.0"
     postman-collection "3.5.1"
     postman-request "2.88.1-postman.13"
-    postman-sandbox "3.3.1"
+    postman-sandbox "3.3.2"
     postman-url-encoder "1.0.2"
     resolve-from "5.0.0"
     serialised-error "1.1.3"
     tough-cookie "3.0.1"
     uuid "3.3.2"
 
-postman-sandbox@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/postman-sandbox/-/postman-sandbox-3.3.1.tgz#d85457c8894c1707a2552cd9aaf8c14a76dee808"
-  integrity sha512-ld8+ZR6hQ/28mKlxcBNJVeOU5MxxF5z5V1EtyqnwZ22Ba/SaauwS06gA8VAjKt3/SgVdjRKAFrdjbbYEpPm9nA==
+postman-sandbox@3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/postman-sandbox/-/postman-sandbox-3.3.2.tgz#f32e72de25a5587db951f294c483567080d17970"
+  integrity sha512-E0FOrHwfKNMuiab0xK1S8/oaNAyqJvG1XT8U2bEML0N/42Zp6dHKeYDQyAzS0HE/TUoHljn6vrdyfi3rPaVEfQ==
   dependencies:
     inherits "2.0.4"
     lodash "4.17.15"
     tough-cookie "3.0.1"
     uuid "3.3.2"
-    uvm "1.7.6"
+    uvm "1.7.7"
 
 postman-url-encoder@1.0.1:
   version "1.0.1"
@@ -7568,10 +7568,10 @@ uuidjs@^4.0.3:
   resolved "https://registry.yarnpkg.com/uuidjs/-/uuidjs-4.2.1.tgz#078e259320cc96a1c6bcd5fa9053f1656ef3c6e5"
   integrity sha512-LNl5tqW081cMcn3+e1BqPDZIDNOooxrPHs7JN1j8pK7wFx0H/ziVUGVlALn+pNJ2jwT9RBHHQsKEnvgkOuYSDw==
 
-uvm@1.7.6:
-  version "1.7.6"
-  resolved "https://registry.yarnpkg.com/uvm/-/uvm-1.7.6.tgz#d46a401865aa38dabb45f1ef2b453477aee90698"
-  integrity sha512-ZYq+hCvCZrcgy1CtR5+WOzcg1m1Iy6F8CFTocyQLIGk3tI438d3emicZLAcZ8o9djocys/GlVGK23563Ei9CqA==
+uvm@1.7.7:
+  version "1.7.7"
+  resolved "https://registry.yarnpkg.com/uvm/-/uvm-1.7.7.tgz#7c98b760d000baa38ed9c270ea1ed9743ffc7574"
+  integrity sha512-n1Ly8YoA1owt8DGTsWCqr8Xg0Okku09VhVKsLoFSVwfMtvW2MDnjAsy3/uxvic/1Na7HrOVPWufm9M+FoYdYEQ==
   dependencies:
     flatted "2.0.1"
     inherits "2.0.4"
