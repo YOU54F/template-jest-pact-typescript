@@ -6982,10 +6982,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-swagger-cli@2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/swagger-cli/-/swagger-cli-2.3.3.tgz#94a71cb4ee47821e2638c8c270b78d12d1c957b3"
-  integrity sha512-He4hZRQ6BPw+ITHJAP+ymQJv9KE8zL6YKaXAEAeMC8E6MVeQ5VZ8OTjjKE+b8EFZjDTxkppDzLQIsD0YvxaHJQ==
+swagger-cli@2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/swagger-cli/-/swagger-cli-2.3.4.tgz#ccdfc6066722f8cc36e5fc7a08ddbf882beec948"
+  integrity sha512-5UV342uGznmKQcMWB3XhkvAc3IFiM28i5hShYXcV/RkUkJD1UCh/nckrcGASaBNu9P0cMgEXUKzof1hMq3O0Uw==
   dependencies:
     chalk "^2.4.2"
     js-yaml "^3.13.1"
