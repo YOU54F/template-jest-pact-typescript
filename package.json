@@ -10,7 +10,7 @@
     "@types/jest": "24.0.23",
     "@types/supertest": "2.0.8",
     "@you54f/newman-wrapper": "1.0.11",
-    "aws4": "1.8.0",
+    "aws4": "1.9.1",
     "chai": "4.2.0",
     "cross-env": "6.0.3",
     "dotenv": "8.2.0",
