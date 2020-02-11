@@ -115,10 +115,6 @@ workflows:
           context: pact-consumer-example-typescript
           requires:
             - compile
-      - aws-provider-verify:
-          context: pact-consumer-example-typescript
-          requires:
-            - verify-test-publish
       - swagger-provider-verify:
           context: pact-consumer-example-typescript
           requires:
