@@ -671,18 +671,6 @@
     "@types/istanbul-lib-coverage" "*"
     "@types/istanbul-lib-report" "*"
 
-"@types/jest-diff@*":
-  version "20.0.1"
-  resolved "https://registry.yarnpkg.com/@types/jest-diff/-/jest-diff-20.0.1.tgz#35cc15b9c4f30a18ef21852e255fdb02f6d59b89"
-  integrity sha512-yALhelO3i0hqZwhjtcr6dYyaLoCHbAMshwtj6cGxTvHZAKXHsYGdff6E8EPw3xLKY0ELUTQ69Q1rQiJENnccMA==
-
-"@types/jest@24.0.19":
-  version "24.0.19"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-24.0.19.tgz#f7036058d2a5844fe922609187c0ad8be430aff5"
-  integrity sha512-YYiqfSjocv7lk5H/T+v5MjATYjaTMsUkbDnjGqSMoO88jWdtJXJV4ST/7DKZcoMHMBvB2SeSfyOzZfkxXHR5xg==
-  dependencies:
-    "@types/jest-diff" "*"
-
 "@types/jest@25.1.2":
   version "25.1.2"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.1.2.tgz#1c4c8770c27906c7d8def5d2033df9dbd39f60da"
@@ -3376,12 +3364,12 @@ jest-mock@^25.1.0:
   dependencies:
     "@jest/types" "^25.1.0"
 
-jest-pact@0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.4.5.tgz#65daf1c32b7366b6a331d1418067eebe72c88d2e"
-  integrity sha512-0uljnLkbUi7mDaSPecGEOA+5uXyKEGmPtNWSmD4TRv5UyQUcuH2s4R7a8udk6z7pO0GOahKAA8IQ0KPKm51AqQ==
+jest-pact@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.5.2.tgz#3be371afa655922c90942d2762c1ffc225b99d64"
+  integrity sha512-/kKDyoe8suYbcEPmGemO+nzXit2F66fb4XlWjHPDUJqpbDhInFo92Y7OUCqajIsOsFdGxbRr/RK1FYPMXKwHhg==
   dependencies:
-    "@types/jest" "24.0.19"
+    "@types/jest" "25.1.2"
 
 jest-pnp-resolver@^1.2.1:
   version "1.2.1"
