@@ -7,7 +7,7 @@
     "@types/aws4": "1.5.1",
     "@types/chai": "4.2.10",
     "@types/dotenv": "6.1.1",
-    "@types/jest": "25.1.3",
+    "@types/jest": "25.1.4",
     "@types/supertest": "2.0.8",
     "@you54f/newman-wrapper": "1.0.11",
     "aws4": "1.9.1",
