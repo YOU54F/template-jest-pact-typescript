@@ -19,7 +19,7 @@
     "jest-junit": "10.0.0",
     "jest-pact": "0.5.2",
     "jest-runner-newman": "1.0.5",
-    "newman": "4.6.0",
+    "newman": "4.6.1",
     "postman-pact": "0.2.1",
     "rimraf": "3.0.2",
     "lint-staged": "10.1.2",
