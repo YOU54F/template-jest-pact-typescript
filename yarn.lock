@@ -550,10 +550,10 @@
     unzipper "^0.10.10"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@9.9.5":
-  version "9.9.5"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.9.5.tgz#62840cad404da9b9ae1733793c31324613f20db9"
-  integrity sha512-LI3Rv6GK2Vbf+8v//9XFJwlGeHvvTQPqn4By7iuXTsPa/05YxsGFjV2+CRG/HbbW15xmFmEqSxwWpj6hyTil9A==
+"@pact-foundation/pact@9.9.12":
+  version "9.9.12"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.9.12.tgz#8d0f82cf7c012c0a84ecff6ee731b241edd6c9bd"
+  integrity sha512-vUJ+sHRHrtVquZDk4DUT00Bg8xvkb75I4XyvWBDHRSkn3k19tsHfVfXbhqVhFQt9FD7/GhEo2ECArPd8aXwscw==
   dependencies:
     "@pact-foundation/pact-node" "^10.9.0"
     "@types/bluebird" "^3.5.20"
