@@ -561,10 +561,10 @@
     unzipper "^0.10.10"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@9.9.12":
-  version "9.9.12"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.9.12.tgz#8d0f82cf7c012c0a84ecff6ee731b241edd6c9bd"
-  integrity sha512-vUJ+sHRHrtVquZDk4DUT00Bg8xvkb75I4XyvWBDHRSkn3k19tsHfVfXbhqVhFQt9FD7/GhEo2ECArPd8aXwscw==
+"@pact-foundation/pact@9.10.0":
+  version "9.10.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.10.0.tgz#2f0eff0bb865c5c06f1a8013685a711f32d38549"
+  integrity sha512-6EEzxKHzUoCcA9nF50ig8ZYKV5aaHQxPlYlDRoSczl7umpdPrFiDQTr0grB7Q9faEj0BZBPF+oOssLZNSvYSbw==
   dependencies:
     "@pact-foundation/pact-node" "^10.9.0"
     "@types/bluebird" "^3.5.20"
