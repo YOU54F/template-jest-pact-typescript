@@ -29,7 +29,7 @@
     "swagger-mock-validator": "9.0.0",
     "swagger-pact": "6.0.5",
     "ts-jest": "25.4.0",
-    "ts-node": "8.9.1",
+    "ts-node": "8.10.0",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-no-focused-test": "0.5.0",
