@@ -23,7 +23,7 @@
     "postman-pact": "0.2.1",
     "rimraf": "3.0.2",
     "lint-staged": "10.2.2",
-    "prettier": "1.19.1",
+    "prettier": "2.0.5",
     "supertest": "4.0.2",
     "swagger-cli": "3.0.1",
     "swagger-mock-validator": "9.0.0",
