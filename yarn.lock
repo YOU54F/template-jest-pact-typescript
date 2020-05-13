@@ -3495,10 +3495,10 @@ jest-mock@^26.0.1:
   dependencies:
     "@jest/types" "^26.0.1"
 
-jest-pact@0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.5.3.tgz#a76d4b22e4ffecdc0d2a8f5b620fc35b969ef651"
-  integrity sha512-llcHNnTLL3NkyDX3YmvgbA0EVY1s3JtWh9+nOpO/Lp48TeeKYeVBh3N+2KVyoOw42nxl9rGHUfnprNqwruKh0g==
+jest-pact@0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.5.4.tgz#8527af84326acf46a19d835c1c433b8dd8c70bff"
+  integrity sha512-6pVrnZK6VhSyf+LgG/lO5ke8kI+MHFDmC/XWoG9feozAsfsLDbqZdM50rOaQprKwmMXfK/C6K0lH1paWHcSdlQ==
   dependencies:
     "@types/jest" "25.1.4"
 
