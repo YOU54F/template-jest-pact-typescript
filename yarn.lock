@@ -645,10 +645,10 @@
     unzipper "^0.10.10"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@9.10.0":
-  version "9.10.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.10.0.tgz#2f0eff0bb865c5c06f1a8013685a711f32d38549"
-  integrity sha512-6EEzxKHzUoCcA9nF50ig8ZYKV5aaHQxPlYlDRoSczl7umpdPrFiDQTr0grB7Q9faEj0BZBPF+oOssLZNSvYSbw==
+"@pact-foundation/pact@9.11.0":
+  version "9.11.0"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.11.0.tgz#f61932b04169d403d24af2a94c49f6a6e7adb999"
+  integrity sha512-CajlvVooPuX/sYy/88Lq17Pk7PbDRxHKmd4TvAPDAfZyP+Okl/EBVOoh2LXyr+fyg3SjYgAMTkWKxKueBbWAeQ==
   dependencies:
     "@pact-foundation/pact-node" "^10.9.0"
     "@types/bluebird" "^3.5.20"
@@ -664,7 +664,7 @@
     express "^4.16.3"
     graphql "^14.0.0"
     graphql-tag "^2.9.1"
-    http-proxy "^1.17.0"
+    http-proxy "^1.18.1"
     http-proxy-middleware "^0.19.0"
     lodash "^4.17.14"
     lodash.isfunction "3.0.8"
@@ -2272,7 +2272,7 @@ event-emitter@^0.3.5:
     d "1"
     es5-ext "~0.10.14"
 
-eventemitter3@4.0.4:
+eventemitter3@4.0.4, eventemitter3@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.4.tgz#b5463ace635a083d018bdc7c917b4c5f10a85384"
   integrity sha512-rlaVLnVxtxvoyLsQQFBx53YmXHDxRIzzTLbdfxqi4yocpSjAxXwkU0cScM5JgSKMqEhrZpnvQ2D9gjylR0AimQ==
@@ -2897,6 +2897,15 @@ http-proxy@^1.17.0:
   integrity sha512-Taqn+3nNvYRfJ3bGvKfBSRwy1v6eePlm3oc/aWVxZp57DQr5Eq3xhKJi7Z4hZpS8PC3H4qI+Yly5EmFacGuA/g==
   dependencies:
     eventemitter3 "^3.0.0"
+    follow-redirects "^1.0.0"
+    requires-port "^1.0.0"
+
+http-proxy@^1.18.1:
+  version "1.18.1"
+  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
+  integrity sha512-7mz/721AbnJwIVbnaSv1Cz3Am0ZLT/UBwkC92VlxhXv/k/BBQfM2fXElQNC27BVGr0uwUpplYPQM9LnaBMR5NQ==
+  dependencies:
+    eventemitter3 "^4.0.0"
     follow-redirects "^1.0.0"
     requires-port "^1.0.0"
 
