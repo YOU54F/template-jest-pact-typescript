@@ -25,7 +25,7 @@
     "lint-staged": "10.2.6",
     "prettier": "2.0.5",
     "supertest": "4.0.2",
-    "swagger-cli": "4.0.2",
+    "swagger-cli": "4.0.3",
     "swagger-mock-validator": "9.0.0",
     "swagger-pact": "6.0.5",
     "ts-jest": "25.5.1",
