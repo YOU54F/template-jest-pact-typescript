@@ -950,10 +950,10 @@
     "@types/cookiejar" "*"
     "@types/node" "*"
 
-"@types/supertest@2.0.9":
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/@types/supertest/-/supertest-2.0.9.tgz#049bddbcb0ee0d60a9b836ccc977d813a1c32325"
-  integrity sha512-0BTpWWWAO1+uXaP/oA0KW1eOZv4hc0knhrWowV06Gwwz3kqQxNO98fUFM2e15T+PdPRmOouNFrYvaBgdojPJ3g==
+"@types/supertest@2.0.11":
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/@types/supertest/-/supertest-2.0.11.tgz#2e70f69f220bc77b4f660d72c2e1a4231f44a77d"
+  integrity sha512-uci4Esokrw9qGb9bvhhSVEjd6rkny/dk5PK/Qz4yxKiyppEI+dOPlNrZBahE3i+PoKFYyDxChVXZ/ysS/nrm1Q==
   dependencies:
     "@types/superagent" "*"
 

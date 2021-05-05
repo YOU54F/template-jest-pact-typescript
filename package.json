@@ -8,7 +8,7 @@
     "@types/chai": "4.2.11",
     "@types/dotenv": "6.1.1",
     "@types/jest": "25.2.3",
-    "@types/supertest": "2.0.9",
+    "@types/supertest": "2.0.11",
     "@you54f/newman-wrapper": "1.0.11",
     "aws4": "1.11.0",
     "chai": "4.2.0",
