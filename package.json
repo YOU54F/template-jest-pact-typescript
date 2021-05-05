@@ -12,7 +12,7 @@
     "@you54f/newman-wrapper": "1.0.11",
     "aws4": "1.11.0",
     "chai": "4.3.4",
-    "cross-env": "7.0.2",
+    "cross-env": "7.0.3",
     "dotenv": "9.0.0",
     "husky": "6.0.0",
     "jest": "26.0.1",
