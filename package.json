@@ -28,7 +28,7 @@
     "swagger-cli": "4.0.4",
     "swagger-mock-validator": "10.1.0",
     "swagger-pact": "6.0.5",
-    "ts-jest": "26.5.6",
+    "ts-jest": "27.0.3",
     "ts-node": "9.1.1",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
