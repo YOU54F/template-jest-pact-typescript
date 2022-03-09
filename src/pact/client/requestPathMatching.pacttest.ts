@@ -1,5 +1,5 @@
-import { InteractionObject } from "@pact-foundation/pact";
-import { like, term } from "@pact-foundation/pact/dsl/matchers";
+import { InteractionObject,Matchers } from "@pact-foundation/pact";
+const { term } = Matchers
 import * as jestpact from "jest-pact";
 import * as supertest from "supertest";
 

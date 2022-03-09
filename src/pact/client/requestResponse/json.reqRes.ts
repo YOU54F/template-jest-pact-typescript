@@ -1,4 +1,5 @@
-import { term } from "@pact-foundation/pact/dsl/matchers";
+import { Matchers } from "@pact-foundation/pact";
+const { term } = Matchers
 
 function matcherRegexString(status: string) {
   if (status === null) {
