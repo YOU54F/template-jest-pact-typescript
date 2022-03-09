@@ -1,7 +1,6 @@
 "use strict";
 
-import { Verifier, VerifierOptions } from "@pact-foundation/pact";
-import { LogLevel } from "@pact-foundation/pact/dsl/options";
+import { Verifier, VerifierOptions, LogLevel } from "@pact-foundation/pact";
 import * as aws4 from "aws4";
 import * as cp from "child_process";
 import * as supertest from "supertest";
@@ -148,15 +147,14 @@ const opts: VerifierOptions = {
   },
   provider: process.env.PACT_PROVIDER_NAME, // where your service will be running during the test, either staging or localhost on CI
   providerBaseUrl: process.env.PACT_PROVIDER_URL, // where your service will be running during the test, either staging or localhost on CI
-  pactBrokerUrl: process.env.PACT_BROKER_URL,
+  pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
   publishVerificationResult: publishResultsFlag || false, // ONLY SET THIS TRUE IN CI!
   validateSSL: true,
   changeOrigin: true,
   providerVersion, // the application version of the provider
-  pactBrokerUsername: process.env.PACT_BROKER_BASIC_AUTH_USERNAME,
-  pactBrokerPassword: process.env.PACT_BROKER_BASIC_AUTH_PASSWORD,
+  pactBrokerToken: process.env.PACT_BROKER_TOKEN,
   tags: tagsArray,
-  logLevel: "error" as LogLevel
+  logLevel: "error"
 };
 
 new Verifier(opts)

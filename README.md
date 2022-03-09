@@ -66,9 +66,8 @@
 
 ### Set the following env vars for pact publishing
 
-- PACT_BROKER_URL
-- PACT_BROKER_BASIC_AUTH_USERNAME
-- PACT_BROKER_BASIC_AUTH_PASSWORD
+- PACT_BROKER_BASE_URL
+- PACT_BROKER_TOKEN
 
 ### Create postman collections from pacts
 

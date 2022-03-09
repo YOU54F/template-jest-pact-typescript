@@ -6,11 +6,9 @@ let revision: string = "";
 let branch: string = "";
 let artefactTag: string = "";
 let opts: PublisherOptions;
-const PACT_BROKER_URL: string = process.env.PACT_BROKER_URL || "";
-const PACT_BROKER_BASIC_AUTH_USERNAME: string =
-  process.env.PACT_BROKER_BASIC_AUTH_USERNAME || "";
-const PACT_BROKER_BASIC_AUTH_PASSWORD: string =
-  process.env.PACT_BROKER_BASIC_AUTH_PASSWORD || "";
+const PACT_BROKER_BASE_URL: string = process.env.PACT_BROKER_BASE_URL || "";
+const PACT_BROKER_TOKEN: string =
+  process.env.PACT_BROKER_TOKEN || "";
 
 main();
 
@@ -18,9 +16,8 @@ function getOpts() {
   const consumerVersion = artefactTag + "-" + revision;
   opts = {
     pactFilesOrDirs: [resolve(process.cwd(), "pact/pacts")],
-    pactBroker: PACT_BROKER_URL,
-    pactBrokerUsername: PACT_BROKER_BASIC_AUTH_USERNAME,
-    pactBrokerPassword: PACT_BROKER_BASIC_AUTH_PASSWORD,
+    pactBroker: PACT_BROKER_BASE_URL,
+    pactBrokerToken: PACT_BROKER_TOKEN,
     consumerVersion,
     tags: [branch]
   };

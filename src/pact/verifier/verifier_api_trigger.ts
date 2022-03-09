@@ -1,7 +1,6 @@
 "use strict";
 
-import { Verifier, VerifierOptions } from "@pact-foundation/pact";
-import { LogLevel } from "@pact-foundation/pact/dsl/options";
+import { Verifier, VerifierOptions, LogLevel } from "@pact-foundation/pact";
 import * as aws4 from "aws4";
 import * as supertest from "supertest";
 import url = require("url");
@@ -11,13 +10,11 @@ let publishResultsFlag: boolean;
 let tagsArray: string[];
 let opts: VerifierOptions;
 const PACT_PROVIDER_VERSION: string = process.env.PACT_PROVIDER_VERSION || "";
-const PACT_BROKER_URL: string = process.env.PACT_BROKER_URL || "";
+const PACT_BROKER_BASE_URL: string = process.env.PACT_BROKER_BASE_URL || "";
 const PACT_PROVIDER_URL: string = process.env.PACT_PROVIDER_URL || "";
 const PACT_PROVIDER_NAME: string = process.env.PACT_PROVIDER_NAME || "";
-const PACT_BROKER_BASIC_AUTH_USERNAME: string =
-  process.env.PACT_BROKER_BASIC_AUTH_USERNAME || "";
-const PACT_BROKER_BASIC_AUTH_PASSWORD: string =
-  process.env.PACT_BROKER_BASIC_AUTH_PASSWORD || "";
+const PACT_BROKER_TOKEN: string =
+  process.env.PACT_BROKER_TOKEN || "";
 
 main();
 
@@ -120,15 +117,14 @@ function getOpts() {
     },
     provider: PACT_PROVIDER_NAME, // where your service will be running during the test, either staging or localhost on CI
     providerBaseUrl: PACT_PROVIDER_URL, // where your service will be running during the test, either staging or localhost on CI
-    pactBrokerUrl: PACT_BROKER_URL,
+    pactBrokerUrl: PACT_BROKER_BASE_URL,
     publishVerificationResult: publishResultsFlag || false, // ONLY SET THIS TRUE IN CI!
     validateSSL: true,
     changeOrigin: true,
     providerVersion, // the application version of the provider
-    pactBrokerUsername: PACT_BROKER_BASIC_AUTH_USERNAME,
-    pactBrokerPassword: PACT_BROKER_BASIC_AUTH_PASSWORD,
+    pactBrokerToken: PACT_BROKER_TOKEN,
     tags: tagsArray,
-    logLevel: "error" as LogLevel
+    logLevel: "error"
   };
 }
 
