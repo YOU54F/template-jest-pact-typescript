@@ -84,10 +84,11 @@ jobs:
             name: install aws cli
             command: |
                 sudo apt-get -y -qq install awscli
-        - run:
-            name: Provider verification with pact
-            command: |
-                yarn run pact-verify-aws
+        # Skip step as provider isnt currently available
+        # - run:
+        #     name: Provider verification with pact
+        #     command: |
+        #         yarn run pact-verify-aws
 
   swagger-provider-verify:
     <<: *defaults  
