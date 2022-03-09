@@ -84,11 +84,10 @@ jobs:
             name: install aws cli
             command: |
                 sudo apt-get -y -qq install awscli
-        # Skip step as provider isnt currently available
-        # - run:
-        #     name: Provider verification with pact
-        #     command: |
-        #         yarn run pact-verify-aws
+        - run:
+            name: Provider verification with pact
+            command: |
+                yarn run pact-verify-aws
 
   swagger-provider-verify:
     <<: *defaults  
@@ -116,8 +115,8 @@ workflows:
           context: pact-consumer-example-typescript
           requires:
             - compile
-      - swagger-provider-verify:
-          context: pact-consumer-example-typescript
-          requires:
-            - verify-test-publish
+    #   - swagger-provider-verify:
+    #       context: pact-consumer-example-typescript
+    #       requires:
+    #         - verify-test-publish
         
