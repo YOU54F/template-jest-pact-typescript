@@ -3730,6 +3730,11 @@ jsonpointer@^4.0.1:
   resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-4.1.0.tgz#501fb89986a2389765ba09e6053299ceb4f2c2cc"
   integrity sha512-CXcRvMyTlnR53xMcKnuMzfCA5i/nfblTnnr74CZb6C4vG39eu6w51t7nKmU5MfLfbTgGItliNyjO/ciNPDqClg==
 
+jsonpointer@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jsonpointer/-/jsonpointer-5.0.0.tgz#f802669a524ec4805fa7389eadbc9921d5dc8072"
+  integrity sha512-PNYZIdMjVIvVgDSYKTT63Y+KZ6IZvGRNNWcxwD+GNnUz1MKPfv30J8ueCjdwcN0nDx2SlshgyB7Oy0epAzVRRg==
+
 jsonschema-draft4@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/jsonschema-draft4/-/jsonschema-draft4-1.0.0.tgz#f0af2005054f0f0ade7ea2118614b69dc512d865"
@@ -5687,16 +5692,16 @@ swagger-methods@^1.0.4:
   resolved "https://registry.yarnpkg.com/swagger-methods/-/swagger-methods-1.0.8.tgz#8baf37ee861d3c72ff7b2faad6d74c60b336e2ed"
   integrity sha512-G6baCwuHA+C5jf4FNOrosE4XlmGsdjbOjdBK4yuiDDj/ro9uR4Srj3OR84oQMT8F3qKp00tYNv0YN730oTHPZA==
 
-swagger-mock-validator@10.1.0:
-  version "10.1.0"
-  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-10.1.0.tgz#c7d321c378ebd44a29838c365f54a6e66d9d9bee"
-  integrity sha512-V+7UyndbKXiWEFu5m6eTWZEMMUIeEzBaBUnb6R2feOJIPpTvmq2DxsEnejA+X+qSNiqmj3zq3xRX3QP1gwLn5Q==
+swagger-mock-validator@10.1.2:
+  version "10.1.2"
+  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-10.1.2.tgz#20a791b0dbfde3aacb284100f96fca443ba0adeb"
+  integrity sha512-yvL14b0aBl3yFXnIeUKRix5BpaELN0PpctC292OEMknQQJCjQWzypAHeiBRqC2jeK613sXQRQqtQKjecc5FOhw==
   dependencies:
     ajv "^6.12.6"
     commander "^7.0.0"
     decimal.js "^10.2.0"
     js-yaml "^4.0.0"
-    jsonpointer "^4.0.1"
+    jsonpointer "^5.0.0"
     lodash "^4.17.10"
     openapi-types "^7.0.1"
     request "^2.87.0"
