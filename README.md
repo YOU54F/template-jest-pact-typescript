@@ -15,7 +15,7 @@
 - [x] Pact mock service docker base
 - [x] Pact mock service docker base examples
 - [x] circleci config
-- [x] use postman-pact to generate postman collections for pact contracts
+- [x] use pmpact to generate postman collections for pact contracts
 - [x] Example pact tests
   - [x] AWS v4 Signed API Gateway Provider
   - [x] Soap API provider
