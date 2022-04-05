@@ -23,7 +23,7 @@
     "pmpact": "0.3.14",
     "rimraf": "3.0.2",
     "lint-staged": "12.3.7",
-    "prettier": "2.5.1",
+    "prettier": "2.6.2",
     "supertest": "6.2.2",
     "swagger-cli": "4.0.4",
     "swagger-mock-validator": "10.1.3",
