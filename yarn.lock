@@ -5474,10 +5474,10 @@ swagger-cli@4.0.4:
   dependencies:
     "@apidevtools/swagger-cli" "4.0.4"
 
-swagger-mock-validator@10.1.2:
-  version "10.1.2"
-  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-10.1.2.tgz#20a791b0dbfde3aacb284100f96fca443ba0adeb"
-  integrity sha512-yvL14b0aBl3yFXnIeUKRix5BpaELN0PpctC292OEMknQQJCjQWzypAHeiBRqC2jeK613sXQRQqtQKjecc5FOhw==
+swagger-mock-validator@10.1.3:
+  version "10.1.3"
+  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-10.1.3.tgz#ea2c6503cbb43279a6c5eff11b534f2dde19fb9a"
+  integrity sha512-KxBD+HOXELBK4bEyVozIqaAOD+BFkmMjsrmLJ33s4tjPMC+fsBpqWFr7yr8keDdveZcXlqWEcEe7HGanPJzhig==
   dependencies:
     ajv "^6.12.6"
     commander "^7.0.0"
