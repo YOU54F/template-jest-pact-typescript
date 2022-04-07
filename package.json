@@ -16,7 +16,7 @@
     "dotenv": "16.0.0",
     "husky": "6.0.0",
     "jest": "26.6.3",
-    "jest-junit": "12.3.0",
+    "jest-junit": "13.1.0",
     "jest-pact": "0.9.3",
     "jest-runner-newman": "1.0.5",
     "newman": "5.3.2",
