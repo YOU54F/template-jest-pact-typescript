@@ -617,6 +617,24 @@
     pkginfo "^0.4.1"
     popsicle "^9.2.0"
 
+"@pactflow/swagger-mock-validator@11.0.0":
+  version "11.0.0"
+  resolved "https://registry.npmjs.org/@pactflow/swagger-mock-validator/-/swagger-mock-validator-11.0.0.tgz#445c6b48b978e25f63a3283e902c227dfcc65f3d"
+  integrity sha512-ze8/Opy6KI/Cc9n2xsHDA7uog9j6mNxC97TV30+veH9DRQebii/K+Pkl0IPYNGACendErgIMZlXx0Q+aDmCNxA==
+  dependencies:
+    ajv "^6.12.6"
+    commander "^7.0.0"
+    decimal.js "^10.2.0"
+    js-yaml "^4.0.0"
+    jsonpointer "^5.0.0"
+    lodash "^4.17.10"
+    openapi-types "^7.0.1"
+    request "^2.87.0"
+    swagger-parser "^10.0.2"
+    uuidjs "^4.0.3"
+    validator "^13.1.17"
+    verror "^1.8.1"
+
 "@postman/form-data@~3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@postman/form-data/-/form-data-3.1.1.tgz#d0446d0d3639a291f5e800e89fa1d0d3723f9414"
@@ -5467,24 +5485,6 @@ swagger-cli@4.0.4:
   integrity sha512-Cp8YYuLny3RJFQ4CvOBTaqmOOgYsem52dPx1xM5S4EUWFblIh2Q8atppMZvXKUr1e9xH5RwipYpmdUzdPcxWcA==
   dependencies:
     "@apidevtools/swagger-cli" "4.0.4"
-
-swagger-mock-validator@10.1.3:
-  version "10.1.3"
-  resolved "https://registry.yarnpkg.com/swagger-mock-validator/-/swagger-mock-validator-10.1.3.tgz#ea2c6503cbb43279a6c5eff11b534f2dde19fb9a"
-  integrity sha512-KxBD+HOXELBK4bEyVozIqaAOD+BFkmMjsrmLJ33s4tjPMC+fsBpqWFr7yr8keDdveZcXlqWEcEe7HGanPJzhig==
-  dependencies:
-    ajv "^6.12.6"
-    commander "^7.0.0"
-    decimal.js "^10.2.0"
-    js-yaml "^4.0.0"
-    jsonpointer "^5.0.0"
-    lodash "^4.17.10"
-    openapi-types "^7.0.1"
-    request "^2.87.0"
-    swagger-parser "^10.0.2"
-    uuidjs "^4.0.3"
-    validator "^13.1.17"
-    verror "^1.8.1"
 
 swagger-parser@^10.0.2:
   version "10.0.3"
