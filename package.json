@@ -24,7 +24,7 @@
     "rimraf": "3.0.2",
     "lint-staged": "12.4.1",
     "prettier": "2.6.2",
-    "supertest": "6.2.2",
+    "supertest": "6.2.3",
     "swagger-cli": "4.0.4",
     "@pactflow/swagger-mock-validator": "11.0.0",
     "ts-jest": "26.5.6",
