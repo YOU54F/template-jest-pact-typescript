@@ -620,10 +620,10 @@
     pkginfo "^0.4.1"
     popsicle "^9.2.0"
 
-"@pactflow/swagger-mock-validator@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.npmjs.org/@pactflow/swagger-mock-validator/-/swagger-mock-validator-11.0.0.tgz#445c6b48b978e25f63a3283e902c227dfcc65f3d"
-  integrity sha512-ze8/Opy6KI/Cc9n2xsHDA7uog9j6mNxC97TV30+veH9DRQebii/K+Pkl0IPYNGACendErgIMZlXx0Q+aDmCNxA==
+"@pactflow/swagger-mock-validator@11.2.0":
+  version "11.2.0"
+  resolved "https://registry.yarnpkg.com/@pactflow/swagger-mock-validator/-/swagger-mock-validator-11.2.0.tgz#bf9effe717e5fc7f9428ba3cc3247979a6465b06"
+  integrity sha512-j07VLCyYr7Wt/J5zo9XXVCpcSMYzcWiWa/riTlsxJdRdwLeAGQnE59maYX1kyb5hpo5eklT+aPr40VOIDbU3WA==
   dependencies:
     ajv "^6.12.6"
     commander "^7.0.0"
