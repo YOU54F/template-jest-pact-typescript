@@ -592,10 +592,10 @@
     unzipper "^0.10.10"
     url-join "^4.0.0"
 
-"@pact-foundation/pact@9.18.0":
-  version "9.18.0"
-  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.18.0.tgz#faf5d646a95d3d292fe13c1cfb863973c9354afb"
-  integrity sha512-UyYZN/QkSp8esv3YjVWo3P3l93voNUx1cTvLkoG2qZPsAr/rpvEkNZmiSMr7wUtSQJqzETa48dWmv+7ZR85eNg==
+"@pact-foundation/pact@9.18.1":
+  version "9.18.1"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-9.18.1.tgz#26efee5467b529af38b804fa7b10cf1b0541550b"
+  integrity sha512-4AJuFmNCepy622jpu69/JJXmDhePaXBHmMtHu3NMqPOY8st8Xky2cJz+ngyFEDN6pqfy40XwCUBMUkC74RjzrQ==
   dependencies:
     "@pact-foundation/pact-node" "^10.17.2"
     "@types/bluebird" "^3.5.20"
@@ -620,7 +620,7 @@
     pino "^6.5.1"
     pino-pretty "^4.1.0"
     pkginfo "^0.4.1"
-    ramda "^0.26.1"
+    ramda "^0.27.2"
     randexp "^0.5.3"
 
 "@pactflow/swagger-mock-validator@11.2.0":
@@ -4779,10 +4779,10 @@ quick-format-unescaped@^4.0.3:
   resolved "https://registry.yarnpkg.com/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz#93ef6dd8d3453cbc7970dd614fad4c5954d6b5a7"
   integrity sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==
 
-ramda@^0.26.1:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.26.1.tgz#8d41351eb8111c55353617fc3bbffad8e4d35d06"
-  integrity sha512-hLWjpy7EnsDBb0p+Z3B7rPi3GDeRG5ZtiI33kJhTt+ORCd38AbAIjB/9zRIUoeTbE/AVX5ZkU7m6bznsvrf8eQ==
+ramda@^0.27.2:
+  version "0.27.2"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.27.2.tgz#84463226f7f36dc33592f6f4ed6374c48306c3f1"
+  integrity sha512-SbiLPU40JuJniHexQSAgad32hfwd+DRUdwF2PlVuI5RZD0/vahUco7R8vD86J/tcEKKF9vZrUVwgtmGCqlCKyA==
 
 randexp@^0.5.3:
   version "0.5.3"
