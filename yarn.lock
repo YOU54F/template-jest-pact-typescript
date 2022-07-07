@@ -623,10 +623,10 @@
     ramda "^0.27.2"
     randexp "^0.5.3"
 
-"@pactflow/swagger-mock-validator@11.2.0":
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/@pactflow/swagger-mock-validator/-/swagger-mock-validator-11.2.0.tgz#bf9effe717e5fc7f9428ba3cc3247979a6465b06"
-  integrity sha512-j07VLCyYr7Wt/J5zo9XXVCpcSMYzcWiWa/riTlsxJdRdwLeAGQnE59maYX1kyb5hpo5eklT+aPr40VOIDbU3WA==
+"@pactflow/swagger-mock-validator@11.3.0":
+  version "11.3.0"
+  resolved "https://registry.yarnpkg.com/@pactflow/swagger-mock-validator/-/swagger-mock-validator-11.3.0.tgz#6eaf23147a41d322b143b23a7a9e8cf93a25bc5c"
+  integrity sha512-d+z07LrFk4Y0po7zDy6Vw4htKqhK5tRtB6egF8VOW1HZxlIpNbSqAy4KSPHmc3JTHTuQMOwQCFSggLrz7pWU1w==
   dependencies:
     ajv "^6.12.6"
     commander "^7.0.0"
