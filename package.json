@@ -28,7 +28,7 @@
     "swagger-cli": "4.0.4",
     "@pactflow/swagger-mock-validator": "11.3.0",
     "ts-jest": "26.5.6",
-    "ts-node": "10.8.2",
+    "ts-node": "10.9.1",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-no-focused-test": "0.5.0",
