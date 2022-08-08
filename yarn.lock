@@ -3413,10 +3413,10 @@ jest-mock@^26.6.2:
     "@jest/types" "^26.6.2"
     "@types/node" "*"
 
-jest-pact@0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.9.4.tgz#c13f3d28cbe6288bbb0920e6b69857a9e1a042e9"
-  integrity sha512-vmBISe3DSGxOuMnjJJHdK0winrkBSpgD/Z3iMCaBUBBYG9bSPsBfGqBzAF0eYLGmQ7yUaoYlI798e515DGnzQw==
+jest-pact@0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/jest-pact/-/jest-pact-0.10.1.tgz#e0b07951e653bc594f3a41be79cd153ba1f6bfd1"
+  integrity sha512-8RDX/mpeEPdSsdcWG1/wc1wJVzPCUklOSG1NCv0GLC06LZoxXQqGjQprBym0JZPFzBxFLd7//L9vXhsfR5CuLA==
 
 jest-pnp-resolver@^1.2.2:
   version "1.2.2"
