@@ -11,7 +11,6 @@
 - [x] Uses Pact.io to perform consumer driven contract tests
 - [x] Uses Swagger-mock-validator to validate generated pact contracts
 - [x] Publishes validated pact contracts to pact-broker (hosted on AWS EC2)
-- [x] Tags validated contracts with branch name
 - [x] Pact mock service docker base
 - [x] Pact mock service docker base examples
 - [x] circleci config
@@ -56,13 +55,9 @@
 
 - Run `yarn run pact-publish`
 
-### Tag pacts
-
-- Run `yarn run pact-tag`
-
 ### Start the mock server
 
-- Run `docker-compose up`
+- Run `cd docker && docker-compose up`
 
 ### Set the following env vars for pact publishing
 
@@ -73,7 +68,7 @@
 
 - run `./postman/postman-pact.sh` to generate postman collections in `pact/postman/collections`
 - run `./postman/postman-replace-urls.sh` to generate env configs for postman in `pact/postman/env` where the urls are replaced with `$PACT_PROVIDER_URL`
-- run `./postman/postman-newman.sj` to run the postman collection against your `$PACT_PROVIDER_URL`
+- run `./postman/postman-newman.sh` to run the postman collection against your `$PACT_PROVIDER_URL`
 - run newman tests with jest, via `npx jest -c jest.newman.js`
 
 Note:- There are no tests in the saved postman collections, so it will run the requests, but will not validate the responses are as per the pacts.

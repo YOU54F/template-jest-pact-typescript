@@ -13,11 +13,13 @@
     "headers": {
       "Content-Type": "application/json"
     },
-    "body": {"build_parameters":{
-      "PACT_PROVIDER_NAME":"${pactbroker.providerName}",
-      "PACT_PROVIDER_URL":"REPLACE_ME_WITH_PROVIDER_BASE_URL",
-      "PACT_PROVIDER_VERSION":"${pactbroker.providerVersionNumber}",
-      "PACT_CONSUMER_TAG":"${pactbroker.consumerVersionTags}"
-      }}
+    "body": {
+      "build_parameters": {
+        "PACT_PROVIDER_NAME": "${pactbroker.providerName}",
+        "PACT_PROVIDER_URL": "REPLACE_ME_WITH_PROVIDER_BASE_URL",
+        "PACT_PROVIDER_VERSION": "${pactbroker.providerVersionNumber}",
+        "PACT_CONSUMER_BRANCH": "${pactbroker.consumerVersionBranch}"
+      }
+    }
   }
 }
