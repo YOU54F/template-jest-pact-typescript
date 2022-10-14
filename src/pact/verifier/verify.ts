@@ -8,10 +8,8 @@ import * as supertest from 'supertest';
 import url = require('url');
 
 let revision: string;
-// let artefactTag: string;
 let branch: string;
 let publishResultsFlag: boolean;
-let tagsArray: string[];
 
 const providerBaseUrl =
   process.env.PACT_PROVIDER_URL ?? 'https://petstore.swagger.io';
@@ -36,32 +34,7 @@ try {
   throw new TypeError("Couldn't find a git branch, is this a git directory?");
 }
 
-// try {
-//   artefactTag = cp
-//     .execSync("git describe", { stdio: "pipe" })
-//     .toString()
-//     .trim();
-// } catch (Error) {
-//   const errorMessage = Error.message;
-//   if (errorMessage.indexOf("fatal") >= 0) {
-//     if (process.env.CIRCLE_BUILD_NUM) {
-//       artefactTag = process.env.CIRCLE_BUILD_NUM;
-//     } else {
-//       throw new TypeError("Couldn't find a git tag or CIRCLE_BUILD_NUM");
-//     }
-//   }
-// }
-
-// const providerVersion = artefactTag + "-" + revision;
 const providerVersion = revision;
-
-if (!process.env.PACT_CONSUMER_TAG) {
-  tagsArray = [branch];
-} else {
-  const tags = process.env.PACT_CONSUMER_TAG.replace(/ /g, '');
-  const tagsSlashEncoded = tags.replace(/\//g, '%2F');
-  tagsArray = tagsSlashEncoded.split(',');
-}
 
 if (
   process.env.PACT_PUBLISH_VERIFICATION &&
@@ -170,7 +143,7 @@ const opts: VerifierOptions = {
   changeOrigin: true,
   providerVersion, // the application version of the provider
   pactBrokerToken: process.env.PACT_BROKER_TOKEN,
-  providerVersionBranch: tagsArray[0],
+  providerVersionBranch: branch,
   logLevel: 'error',
   consumerVersionSelectors: [{ mainBranch: true }, { deployedOrReleased: true }]
 };
