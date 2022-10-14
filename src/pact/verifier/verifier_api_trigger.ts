@@ -18,7 +18,8 @@ let tagsArray: string[];
 let opts: VerifierOptions;
 const PACT_PROVIDER_VERSION: string = process.env.PACT_PROVIDER_VERSION || '';
 const PACT_BROKER_BASE_URL: string = process.env.PACT_BROKER_BASE_URL || '';
-const PACT_PROVIDER_URL: string = process.env.PACT_PROVIDER_URL || '';
+const PACT_PROVIDER_URL: string =
+  process.env.PACT_PROVIDER_URL || 'https://petstore.swagger.io';
 const PACT_PROVIDER_NAME: string = process.env.PACT_PROVIDER_NAME || '';
 const PACT_BROKER_TOKEN: string = process.env.PACT_BROKER_TOKEN || '';
 

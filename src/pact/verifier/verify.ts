@@ -13,9 +13,12 @@ let branch: string;
 let publishResultsFlag: boolean;
 let tagsArray: string[];
 
+const providerBaseUrl =
+  process.env.PACT_PROVIDER_URL ?? 'https://petstore.swagger.io';
+
 try {
   revision = cp
-    .execSync('git rev-parse --short HEAD', { stdio: 'pipe' })
+    .execSync('git rev-parse HEAD', { stdio: 'pipe' })
     .toString()
     .trim();
 } catch (Error) {
@@ -80,7 +83,7 @@ let authHeaders: {
 const opts: VerifierOptions = {
   stateHandlers: {
     'A pet 1845563262948980200 exists': async () => {
-      const requestUrl = process.env.PACT_PROVIDER_URL;
+      const requestUrl = providerBaseUrl;
       const pet = '1845563262948980200';
       const object = {
         id: pet,
@@ -109,7 +112,7 @@ const opts: VerifierOptions = {
       });
     },
     'Is authenticated': async () => {
-      const requestUrl = process.env.PACT_PROVIDER_URL;
+      const requestUrl = providerBaseUrl;
       const host = new url.URL(requestUrl).host;
       const apiroute = new url.URL(requestUrl).pathname;
       const pathname = `${apiroute}/helloworld`;
@@ -159,8 +162,8 @@ const opts: VerifierOptions = {
     }
     next();
   },
-  provider: process.env.PACT_PROVIDER_NAME, // where your service will be running during the test, either staging or localhost on CI
-  providerBaseUrl: process.env.PACT_PROVIDER_URL, // where your service will be running during the test, either staging or localhost on CI
+  provider: process.env.PACT_PROVIDER_NAME ?? 'json-provider', // where your service will be running during the test, either staging or localhost on CI
+  providerBaseUrl: providerBaseUrl, // where your service will be running during the test, either staging or localhost on CI
   pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
   publishVerificationResult: publishResultsFlag || false, // ONLY SET THIS TRUE IN CI!
   validateSSL: true,
@@ -168,7 +171,8 @@ const opts: VerifierOptions = {
   providerVersion, // the application version of the provider
   pactBrokerToken: process.env.PACT_BROKER_TOKEN,
   providerVersionBranch: tagsArray[0],
-  logLevel: 'error'
+  logLevel: 'error',
+  consumerVersionSelectors: [{ mainBranch: true }, { deployedOrReleased: true }]
 };
 
 new Verifier(opts)
