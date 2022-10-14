@@ -33,7 +33,7 @@
 ## Where can I see it
 
 - CircleCI builds here - <https://circleci.com/gh/YOU54F/pact-consumer-example-typescript>
-- Pact Broker here - <https://you54f.co.uk> - running on AWS Lambda (see https://github.com/YOU54F/pact_broker-serverless for details of setup)
+- Pact Broker here - <https://you54f.co.uk> - running on AWS Lambda (see <https://github.com/YOU54F/pact_broker-serverless> for details of setup)
 
 ## Installation
 
@@ -54,11 +54,11 @@
 
 ### Publish pacts
 
-- Run `pact-publish`
+- Run `yarn run pact-publish`
 
 ### Tag pacts
 
-- Run `pact-tag`
+- Run `yarn run pact-tag`
 
 ### Start the mock server
 
