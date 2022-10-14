@@ -6,7 +6,7 @@ COPY healthcheck.go .
 
 RUN go build healthcheck.go
 
-FROM debian:stretch
+FROM debian:bullseye
 
 ARG PACT_RUBY_VERSION="1.66.0"
 
