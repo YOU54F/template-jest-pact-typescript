@@ -1,20 +1,26 @@
-"use strict";
+'use strict';
 
-import { Verifier, VerifierOptions, LogLevel } from "@pact-foundation/pact";
-import * as aws4 from "aws4";
-import * as supertest from "supertest";
-import url = require("url");
+import { Verifier } from '@pact-foundation/pact';
+import { VerifierOptions } from '@pact-foundation/pact/src/dsl/verifier/types';
 
-let authHeaders: any;
+import * as aws4 from 'aws4';
+import * as supertest from 'supertest';
+import url = require('url');
+
+let authHeaders: {
+  Host?: string;
+  Authorization?: string;
+  ['X-Amz-Security-Token']?: string;
+  ['X-Amz-Date']?: string;
+};
 let publishResultsFlag: boolean;
 let tagsArray: string[];
 let opts: VerifierOptions;
-const PACT_PROVIDER_VERSION: string = process.env.PACT_PROVIDER_VERSION || "";
-const PACT_BROKER_BASE_URL: string = process.env.PACT_BROKER_BASE_URL || "";
-const PACT_PROVIDER_URL: string = process.env.PACT_PROVIDER_URL || "";
-const PACT_PROVIDER_NAME: string = process.env.PACT_PROVIDER_NAME || "";
-const PACT_BROKER_TOKEN: string =
-  process.env.PACT_BROKER_TOKEN || "";
+const PACT_PROVIDER_VERSION: string = process.env.PACT_PROVIDER_VERSION || '';
+const PACT_BROKER_BASE_URL: string = process.env.PACT_BROKER_BASE_URL || '';
+const PACT_PROVIDER_URL: string = process.env.PACT_PROVIDER_URL || '';
+const PACT_PROVIDER_NAME: string = process.env.PACT_PROVIDER_NAME || '';
+const PACT_BROKER_TOKEN: string = process.env.PACT_BROKER_TOKEN || '';
 
 main();
 
@@ -32,7 +38,7 @@ function getOpts() {
   const providerVersion = PACT_PROVIDER_VERSION;
   if (
     process.env.PACT_PUBLISH_VERIFICATION &&
-    process.env.PACT_PUBLISH_VERIFICATION === "true"
+    process.env.PACT_PUBLISH_VERIFICATION === 'true'
   ) {
     publishResultsFlag = true;
   }
@@ -42,7 +48,7 @@ function getOpts() {
   let signedAuthorization: string;
   opts = {
     stateHandlers: {
-      "Is authenticated": async () => {
+      'Is authenticated': async () => {
         const requestUrl = PACT_PROVIDER_URL;
         const host = new url.URL(requestUrl).host;
         const pathname = new url.URL(requestUrl).pathname;
@@ -59,43 +65,50 @@ function getOpts() {
         });
         authHeaders = options.headers;
         signedHost = authHeaders.Host;
-        signedXAmzSecurityToken = authHeaders["X-Amz-Security-Token"];
-        signedXAmzDate = authHeaders["X-Amz-Date"];
+        signedXAmzSecurityToken = authHeaders['X-Amz-Security-Token'];
+        signedXAmzDate = authHeaders['X-Amz-Date'];
         signedAuthorization = authHeaders.Authorization;
-        return Promise.resolve(`AWS signed headers created`);
+        return Promise.resolve({
+          description: 'AWS signed headers created'
+        });
       },
-      "Is not authenticated": async () => {
+      'Is not authenticated': async () => {
         signedHost = null;
         signedXAmzSecurityToken = null;
         signedXAmzDate = null;
         signedAuthorization = null;
-        return Promise.resolve(`Blank aws headers created`);
+        return Promise.resolve({
+          description: `Blank aws headers created`
+        });
       },
-      "A pet 1845563262948980200 exists": async () => {
+      'A pet 1845563262948980200 exists': async () => {
         const requestUrl = process.env.PACT_PROVIDER_URL;
-        const pet = "1845563262948980200";
+        const pet = '1845563262948980200';
         const object = {
           id: 0,
           category: {
             id: pet,
-            name: "string"
+            name: 'string'
           },
-          name: "doggie",
-          photoUrls: ["string"],
+          name: 'doggie',
+          photoUrls: ['string'],
           tags: [
             {
               id: 0,
-              name: "string"
+              name: 'string'
             }
           ],
-          status: "available"
+          status: 'available'
         };
         const res = await supertest(requestUrl)
           .post(`/v2/pet`)
           .send(object)
-          .set("api_key", "[]")
+          .set('api_key', '[]')
           .expect(200);
-        return Promise.resolve(res);
+        return Promise.resolve({
+          description: 'added doggo',
+          res: res.body.id
+        });
       }
     },
     requestFilter: (req, res, next) => {
@@ -105,10 +118,10 @@ function getOpts() {
         req.headers.Host = signedHost;
       }
       if (signedXAmzSecurityToken != null) {
-        req.headers["X-Amz-Security-Token"] = signedXAmzSecurityToken;
+        req.headers['X-Amz-Security-Token'] = signedXAmzSecurityToken;
       }
       if (signedXAmzDate != null) {
-        req.headers["X-Amz-Date"] = signedXAmzDate;
+        req.headers['X-Amz-Date'] = signedXAmzDate;
       }
       if (signedAuthorization != null) {
         req.headers.Authorization = signedAuthorization;
@@ -123,8 +136,8 @@ function getOpts() {
     changeOrigin: true,
     providerVersion, // the application version of the provider
     pactBrokerToken: PACT_BROKER_TOKEN,
-    tags: tagsArray,
-    logLevel: "error"
+    providerVersionBranch: tagsArray[0],
+    logLevel: 'error'
   };
 }
 
@@ -133,10 +146,10 @@ function performVerification() {
     .verifyProvider()
     .then(() => {
       // tslint:disable-next-line: no-console
-      console.log("successfully verified pacts");
+      console.log('successfully verified pacts');
       process.exit(0);
     })
-    .catch((error: any) => {
+    .catch((error) => {
       // tslint:disable-next-line: no-console
       console.log(error);
       process.exit(1);
@@ -147,12 +160,12 @@ function processTags() {
   if (!process.env.PACT_CONSUMER_TAG) {
     // tslint:disable-next-line: no-console
     console.log(
-      "Exited gracefully because Env var PACT_CONSUMER_TAG is not set - Make sure you calling this via an API trigger"
+      'Exited gracefully because Env var PACT_CONSUMER_TAG is not set - Make sure you calling this via an API trigger'
     );
     return process.exit(0);
   } else {
-    const tags = process.env.PACT_CONSUMER_TAG.replace(/ /g, "");
-    const tagsSlashEncoded = tags.replace(/\//g, "%2F");
-    tagsArray = tagsSlashEncoded.split(",");
+    const tags = process.env.PACT_CONSUMER_TAG.replace(/ /g, '');
+    const tagsSlashEncoded = tags.replace(/\//g, '%2F');
+    tagsArray = tagsSlashEncoded.split(',');
   }
 }

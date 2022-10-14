@@ -8,7 +8,7 @@ jestpact.pactWith(
     provider: 'aws-provider',
     pactfileWriteMode: 'merge'
   },
-  async (provider: any) => {
+  async (provider) => {
     const client = () => {
       const url = `${provider.mockService.baseUrl}`;
       return supertest(url);

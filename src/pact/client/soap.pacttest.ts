@@ -1,9 +1,9 @@
-import { InteractionObject, XmlBuilder } from '@pact-foundation/pact';
+// import { InteractionObject, XmlBuilder } from '@pact-foundation/pact';
 import {
-  boolean,
-  integer,
-  regex,
-  string
+  // boolean,
+  // integer,
+  regex
+  // string
 } from '@pact-foundation/pact/src/v3/matchers';
 import * as fs from 'fs';
 import * as jestpact from 'jest-pact/dist/v3';

@@ -7,15 +7,16 @@ import * as supertest from 'supertest';
 jestpact.pactWith(
   { consumer: 'test-consumer', provider: 'file-upload-provider' },
 
-  async (provider: any) => {
+  async (provider) => {
     const client = () => {
       const url = `${provider.mockService.baseUrl}`;
       return supertest(url);
     };
     describe.skip('file upload service', () => {
       test('should successfully allow upload of a base 64 encoded pdf', async () => {
-        const pdfname: string = 'test-base64.pdf';
+        const pdfname = 'test-base64.pdf';
         const pdf = readFileSync(pdfname);
+        // eslint-disable-next-line no-useless-escape
         const body = `----------------------------713166514119664968500586\r\nContent-Disposition: form-data; name=\"test\"\r\n\r\ntest\r\n----------------------------713166514119664968500586\r\nContent-Disposition: form-data; name=\"document\"; filename=\"${pdfname}\"\r\nContent-Type: application/pdf\r\n\r\n${pdf}\r\n----------------------------713166514119664968500586--\r\n`;
         const interaction: InteractionObject = {
           state: 'Service is up and healthy',
@@ -63,8 +64,9 @@ jestpact.pactWith(
           .expect(201);
       });
       test('should successfully allow upload of binary encoded pdf', async () => {
-        const pdfname: string = 'test.pdf';
+        const pdfname = 'test.pdf';
         const pdf = readFileSync(pdfname);
+        // eslint-disable-next-line no-useless-escape
         const body = `----------------------------713166514119664968500586\r\nContent-Disposition: form-data; name=\"test\"\r\n\r\ntest\r\n----------------------------713166514119664968500586\r\nContent-Disposition: form-data; name=\"document\"; filename=\"${pdfname}\"\r\nContent-Type: application/pdf\r\n\r\n${pdf}\r\n----------------------------713166514119664968500586--\r\n`;
         const interaction: InteractionObject = {
           state: 'Service is up and healthy',

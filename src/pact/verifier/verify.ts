@@ -1,6 +1,7 @@
 'use strict';
 
-import { Verifier, VerifierOptions, LogLevel } from '@pact-foundation/pact';
+import { Verifier } from '@pact-foundation/pact';
+import { VerifierOptions } from '@pact-foundation/pact/src/dsl/verifier/types';
 import * as aws4 from 'aws4';
 import * as cp from 'child_process';
 import * as supertest from 'supertest';
@@ -69,7 +70,12 @@ let signedHost: string;
 let signedXAmzSecurityToken: string;
 let signedXAmzDate: string;
 let signedAuthorization: string;
-let authHeaders: any;
+let authHeaders: {
+  Host?: string;
+  Authorization?: string;
+  ['X-Amz-Security-Token']?: string;
+  ['X-Amz-Date']?: string;
+};
 
 const opts: VerifierOptions = {
   stateHandlers: {
@@ -97,7 +103,10 @@ const opts: VerifierOptions = {
         .send(object)
         .set('api_key', '[]')
         .expect(200);
-      return Promise.resolve(res);
+      return Promise.resolve({
+        description: 'added doggo',
+        res: res.body.id
+      });
     },
     'Is authenticated': async () => {
       const requestUrl = process.env.PACT_PROVIDER_URL;
@@ -120,14 +129,18 @@ const opts: VerifierOptions = {
       signedXAmzSecurityToken = authHeaders['X-Amz-Security-Token'];
       signedXAmzDate = authHeaders['X-Amz-Date'];
       signedAuthorization = authHeaders.Authorization;
-      return Promise.resolve(`AWS signed headers created`);
+      return Promise.resolve({
+        description: 'AWS signed headers created'
+      });
     },
     'Is not authenticated': async () => {
       signedHost = null;
       signedXAmzSecurityToken = null;
       signedXAmzDate = null;
       signedAuthorization = null;
-      return Promise.resolve(`Blank aws headers created`);
+      return Promise.resolve({
+        description: `Blank aws headers created`
+      });
     }
   },
   requestFilter: (req, res, next) => {
@@ -154,7 +167,7 @@ const opts: VerifierOptions = {
   changeOrigin: true,
   providerVersion, // the application version of the provider
   pactBrokerToken: process.env.PACT_BROKER_TOKEN,
-  tags: tagsArray,
+  providerVersionBranch: tagsArray[0],
   logLevel: 'error'
 };
 
@@ -165,7 +178,7 @@ new Verifier(opts)
     console.log('successfully verified pacts');
     process.exit(0);
   })
-  .catch((error: any) => {
+  .catch((error) => {
     // tslint:disable-next-line: no-console
     console.log(error);
     process.exit(1);
