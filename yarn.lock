@@ -879,9 +879,9 @@
     underscore "1.12.1"
     unixify "1.0.0"
 
-"@pact-foundation/pact@^10.1.4":
+"@pact-foundation/pact@10.1.4":
   version "10.1.4"
-  resolved "https://registry.npmjs.org/@pact-foundation/pact/-/pact-10.1.4.tgz#3a5bbfc4160aa085242565d73885f03f40557d66"
+  resolved "https://registry.yarnpkg.com/@pact-foundation/pact/-/pact-10.1.4.tgz#3a5bbfc4160aa085242565d73885f03f40557d66"
   integrity sha512-K1P04rooTWja2PEQ2dMab2Vs9bdMx/Wq4hwutZxzJW9smOj73DZhhHJ+rtNn3UvPOX83JC+rejJQpt9/STLI+Q==
   dependencies:
     "@pact-foundation/pact-core" "^13.7.8"
@@ -1225,9 +1225,9 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^5.40.0":
+"@typescript-eslint/eslint-plugin@5.40.0":
   version "5.40.0"
-  resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.40.0.tgz#0159bb71410eec563968288a17bd4478cdb685bd"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.40.0.tgz#0159bb71410eec563968288a17bd4478cdb685bd"
   integrity sha512-FIBZgS3DVJgqPwJzvZTuH4HNsZhHMa9SjxTKAZTlMsPw/UzpEjcf9f4dfgDJEHjK+HboUJo123Eshl6niwEm/Q==
   dependencies:
     "@typescript-eslint/scope-manager" "5.40.0"
@@ -1239,9 +1239,9 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/parser@^5.40.0":
+"@typescript-eslint/parser@5.40.0":
   version "5.40.0"
-  resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.40.0.tgz#432bddc1fe9154945660f67c1ba6d44de5014840"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-5.40.0.tgz#432bddc1fe9154945660f67c1ba6d44de5014840"
   integrity sha512-Ah5gqyX2ySkiuYeOIDg7ap51/b63QgWZA7w6AHtFrag7aH0lRQPbLzUjk0c9o5/KZ6JRkTTDKShL4AUrQa6/hw==
   dependencies:
     "@typescript-eslint/scope-manager" "5.40.0"
