@@ -1,6 +1,6 @@
 # Pact Consumer Workflow Example in Typescript with Jest
 
-[![CircleCI](https://circleci.com/gh/YOU54F/jest-pact-typescript.svg?style=svg)](https://circleci.com/gh/YOU54F/jest-pact-typescript)
+[![CircleCI](https://circleci.com/gh/YOU54F/template-jest-pact-typescript.svg?style=svg)](https://circleci.com/gh/YOU54F/template-jest-pact-typescript)
 
 ## Showcases the following
 
