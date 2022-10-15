@@ -9,6 +9,8 @@ on:
 env:
   PACT_BROKER_BASE_URL: https://saflow.pactflow.io
   PACT_BROKER_TOKEN: ${{ secrets.PACT_BROKER_TOKEN }}
+  PACT_PUBLISH_VERIFICATION: true
+
   
 jobs:
   test:
