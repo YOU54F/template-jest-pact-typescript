@@ -4,7 +4,7 @@
   "description": "",
   "devDependencies": {
     "@pact-foundation/pact": "10.1.4",
-    "@pactflow/swagger-mock-validator": "11.3.0",
+    "@pactflow/swagger-mock-validator": "11.5.0",
     "@types/aws4": "1.11.2",
     "@types/chai": "4.3.3",
     "@types/jest": "28.1.8",
