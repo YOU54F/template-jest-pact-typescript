@@ -1142,10 +1142,10 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-18.8.5.tgz#6a31f820c1077c3f8ce44f9e203e68a176e8f59e"
   integrity sha512-Bq7G3AErwe5A/Zki5fdD3O6+0zDChhg671NfPjtIcbtzDNZTv4NPKMRFr7gtYPG7y+B8uTiNK4Ngd9T0FTar6Q==
 
-"@types/node@16.11.68":
-  version "16.11.68"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.68.tgz#30ee923f4d940793e0380f5ce61c0bd4b7196b6c"
-  integrity sha512-JkRpuVz3xCNCWaeQ5EHLR/6woMbHZz/jZ7Kmc63AkU+1HxnoUugzSWMck7dsR4DvNYX8jp9wTi9K7WvnxOIQZQ==
+"@types/node@18.16.12":
+  version "18.16.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.12.tgz#f11e19055c5b3daeb79dc6eb7ccdd3d036313034"
+  integrity sha512-tIRrjbY9C277MOfP8M3zjMIhtMlUJ6YVqkGgLjz+74jVsdf4/UjC6Hku4+1N0BS0qyC0JAS6tJLUk9H6JUKviQ==
 
 "@types/pino-pretty@*":
   version "4.7.5"

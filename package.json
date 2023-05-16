@@ -8,7 +8,7 @@
     "@types/aws4": "1.11.2",
     "@types/chai": "4.3.3",
     "@types/jest": "28.1.8",
-    "@types/node": "16.11.68",
+    "@types/node": "18.16.12",
     "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.56.0",
     "@typescript-eslint/parser": "5.56.0",
