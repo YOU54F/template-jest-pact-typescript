@@ -42,16 +42,7 @@ if (
 ) {
   publishResultsFlag = true;
 }
-let signedHost: string;
-let signedXAmzSecurityToken: string;
-let signedXAmzDate: string;
-let signedAuthorization: string;
-let authHeaders: {
-  Host?: string;
-  Authorization?: string;
-  ['X-Amz-Security-Token']?: string;
-  ['X-Amz-Date']?: string;
-};
+let setAuth: boolean;
 
 const opts: VerifierOptions = {
   stateHandlers: {
@@ -85,57 +76,57 @@ const opts: VerifierOptions = {
       });
     },
     'Is authenticated': async () => {
-      const requestUrl = providerBaseUrl;
-      const host = new url.URL(requestUrl).host;
-      const apiroute = new url.URL(requestUrl).pathname;
-      const pathname = `${apiroute}/helloworld`;
-      const options = {
-        host,
-        path: pathname,
-        headers: {}
-      };
-      await aws4.sign(options);
-      aws4.sign(options, {
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        sessionToken: process.env.AWS_SESSION_TOKEN
-      });
-      authHeaders = options.headers;
-      signedHost = authHeaders.Host;
-      signedXAmzSecurityToken = authHeaders['X-Amz-Security-Token'];
-      signedXAmzDate = authHeaders['X-Amz-Date'];
-      signedAuthorization = authHeaders.Authorization;
+      setAuth = true;
       return Promise.resolve({
-        description: 'AWS signed headers created'
+        description: 'AWS setAuth flag set'
       });
     },
     'Is not authenticated': async () => {
-      signedHost = null;
-      signedXAmzSecurityToken = null;
-      signedXAmzDate = null;
-      signedAuthorization = null;
+      setAuth = false;
       return Promise.resolve({
-        description: `Blank aws headers created`
+        description: 'AWS setAuth flag unset'
       });
     }
   },
   requestFilter: (req, res, next) => {
-    // over-riding request headers with AWS credentials
-    if (signedHost != null) {
-      req.headers.Host = signedHost;
+    if (setAuth) {
+      console.log('setting auth overrides for AWS', {
+        path: req.path,
+        method: req.method
+      });
+      const requestUrl = providerBaseUrl;
+      const host = new url.URL(requestUrl).host;
+      const apiroute = new url.URL(requestUrl).pathname;
+      let options: aws4.Request = {
+        host,
+        path: apiroute + req.path,
+        headers: {}
+      };
+      if (req.method === 'POST') {
+        options = {
+          ...options,
+          body: JSON.stringify(req.body),
+          headers: { 'Content-Type': 'application/json' }
+        };
+      }
+      aws4.sign(options, {
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID
+        // // The following is required if using AWS STS to assume a role
+        // sessionToken: process.env.AWS_SESSION_TOKEN
+      });
+      const authHeaders = options.headers;
+      req.headers['Host'] = authHeaders['Host'].toString();
+      req.headers['X-Amz-Date'] = authHeaders['X-Amz-Date'].toString();
+      req.headers['Authorization'] = authHeaders['Authorization'].toString();
+      // // The following is required if using AWS STS to assume a role
+      // req.headers["X-Amz-Security-Token"] =  authHeaders["X-Amz-Security-Token"];
+      setAuth = false;
     }
-    if (signedXAmzSecurityToken != null) {
-      req.headers['X-Amz-Security-Token'] = signedXAmzSecurityToken;
-    }
-    if (signedXAmzDate != null) {
-      req.headers['X-Amz-Date'] = signedXAmzDate;
-    }
-    if (signedAuthorization != null) {
-      req.headers.Authorization = signedAuthorization;
-    }
+
     next();
   },
-  provider: process.env.PACT_PROVIDER_NAME ?? 'json-provider', // where your service will be running during the test, either staging or localhost on CI
+  provider: process.env.PACT_PROVIDER_NAME ?? 'aws-provider', // where your service will be running during the test, either staging or localhost on CI
   providerBaseUrl: providerBaseUrl, // where your service will be running during the test, either staging or localhost on CI
   pactBrokerUrl: process.env.PACT_BROKER_BASE_URL,
   publishVerificationResult: publishResultsFlag || false, // ONLY SET THIS TRUE IN CI!
